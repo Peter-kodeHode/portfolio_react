@@ -7,10 +7,10 @@ import {
     Link
   } from "react-router-dom";
 
-import AboutMe from "./components/";
-import Projects from "./components/";
-import Home from "./components/";
-import Footer from "./components/";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
+import Home from "./Home";
+import Footer from "./Footer";
 
 function Header(){
     return(
