@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Peter-kodeHode/portfolio_react/static/css/main.15c974c2.css",
+    "main.js": "/Peter-kodeHode/portfolio_react/static/js/main.bf77a9c9.js",
+    "static/js/787.6e7ececb.chunk.js": "/Peter-kodeHode/portfolio_react/static/js/787.6e7ececb.chunk.js",
+    "index.html": "/Peter-kodeHode/portfolio_react/index.html",
+    "main.15c974c2.css.map": "/Peter-kodeHode/portfolio_react/static/css/main.15c974c2.css.map",
+    "main.bf77a9c9.js.map": "/Peter-kodeHode/portfolio_react/static/js/main.bf77a9c9.js.map",
+    "787.6e7ececb.chunk.js.map": "/Peter-kodeHode/portfolio_react/static/js/787.6e7ececb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15c974c2.css",
+    "static/js/main.bf77a9c9.js"
+  ]
+}
