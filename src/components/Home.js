@@ -1,41 +1,45 @@
 import React from "react";
 
+const PoddinFace = process.env.PUBLIC_URL + "/images/poddinfacerealvector.png"
+const CodeImg = process.env.PUBLIC_URL + "/images/code.jpg"
+const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
+
 function Home(){
     return(
         <>
-        <main id="swup" class="transition-fade">
-    <div class="introduction">
+        <main id="swup" className="transition-fade">
+    <div className="introduction">
       <p>
         Hei og velkommen! Mitt navn er Peter Daniel Nygaard og jeg driver med front-end!
       </p>
     </div>
 
-    <div class="smiley">
+    <div className="smiley">
       <p>:)</p>
     </div>
 
-    <div class="box-container">
-      <div class="black-box1">
-        <div class="h1-box">
+    <div className="box-container">
+      <div className="black-box1">
+        <div className="h1-box">
           <a href="/aboutme.html">MEG</a>
         </div>
       </div>
-      <div class="white-box1">
-        <img src="images/poddinfacerealvector.png" />
+      <div className="white-box1">
+        <img src={PoddinFace} alt=""/>
       </div>
 
-      <div class="black-box2">
-        <div class="h1-box">
+      <div className="black-box2">
+        <div className="h1-box">
           <a href="/projects.html">PROSJEKTER</a>
         </div>
       </div>
-      <div class="white-box2">
-        <img src="images/code.jpg" />
+      <div className="white-box2">
+        <img src={CodeImg} alt=""/>
       </div>
     </div>
 
-    <div class="filler-image">
-      <img src="images/chains.jpg" />
+    <div className="filler-image">
+      <img src={ChainImg} alt=""/>
     </div>
   </main>
         </>

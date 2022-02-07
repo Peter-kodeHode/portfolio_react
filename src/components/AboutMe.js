@@ -1,13 +1,18 @@
 import React from "react";
 
+
+const MyFace = process.env.PUBLIC_URL + "/images/itsme.jpg"
+const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
+
+
 function aboutMe() {
     return(
         <>
-        <main id="swup" class="transition-fade">
-    <div class="aboutme">
+        <main id="swup" className="transition-fade">
+    <div className="aboutme">
       <h1>Litt om meg</h1>
       
-      <img class="aboutgrey" src="images/itsme.jpg" />
+      <img className="aboutgrey" src={MyFace} alt="Peter"/>
 
       <p>
         Hei! Jeg heter Peter og jeg er en relativt fersk spiller i
@@ -41,8 +46,8 @@ function aboutMe() {
         Utenom alt dette, så sier mamma at jeg er en snill og kjekk gutt.
       </p>
     </div>
-    <div class="filler-image">
-      <img src="images/chains.jpg" />
+    <div className="filler-image" >
+      <img src={ChainImg} alt=""/>
     </div>
   </main>
         </>
