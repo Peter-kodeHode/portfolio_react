@@ -1,6 +1,7 @@
 import React from "react";
 import {
-  BrowserRouter, 
+  BrowserRouter,
+  HashRouter,
   Outlet,
   Routes,
   Route,
@@ -22,13 +23,13 @@ function App() {
     
    
     <div className="App">
-         <BrowserRouter>
+         <HashRouter>
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="aboutme" element={<AboutMe/>}/>
       <Route path="projects" element={<Projects/>}/>
     </Routes> 
-    </BrowserRouter>
+    </HashRouter>
    
           
           
