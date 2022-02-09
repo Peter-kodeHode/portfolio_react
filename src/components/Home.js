@@ -1,12 +1,18 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+
+
 
 const PoddinFace = process.env.PUBLIC_URL + "/images/poddinfacerealvector.png"
 const CodeImg = process.env.PUBLIC_URL + "/images/code.jpg"
 const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 
 function Home(){
+
     return(
         <>
+         <Header/>
         <main id="swup" className="transition-fade">
     <div className="introduction">
       <p>
@@ -42,8 +48,17 @@ function Home(){
       <img src={ChainImg} alt=""/>
     </div>
   </main>
+  
+      <Footer/>
+       
         </>
+
+
+        
+        
+
     );
+    
 }
 
 export default Home;

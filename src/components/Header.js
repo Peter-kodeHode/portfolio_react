@@ -1,9 +1,11 @@
 import React from "react";
 import {
-    Routes,
-    Route,
-    Link
-  } from "react-router-dom";
+  BrowserRouter,
+  Outlet,
+  Routes,
+  Route,
+  Link} 
+  from "react-router-dom";
 
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
@@ -17,17 +19,12 @@ function Header(){
     return(
         
           <div className="navbar">
-     <Routes>
-      <Route path="/aboutme" element={<AboutMe/>}/>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/projects" element={<Projects/>}/>
-
-    </Routes>    
+   
 
     <Link to="/aboutme"> <img className="logo" src={PdLogo} alt=""/></Link>
     <Link to="/"><img className="home" src={HomeNav} alt="" /></Link>
     <Link to="/projects"><img className="checklist" src={CheckList} alt="" /></Link>
-  
+    
 
      </div>
     );

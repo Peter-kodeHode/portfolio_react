@@ -1,13 +1,15 @@
 import React from "react";
-
+import Header from "./Header";
+import Footer from "./Footer";
 
 const MyFace = process.env.PUBLIC_URL + "/images/itsme.jpg"
 const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 
 
-function aboutMe() {
+function AboutMe() {
     return(
         <>
+        <Header/>
         <main id="swup" className="transition-fade">
     <div className="aboutme">
       <h1>Litt om meg</h1>
@@ -50,9 +52,9 @@ function aboutMe() {
       <img src={ChainImg} alt=""/>
     </div>
   </main>
+  <Footer/>
         </>
-
     );
 }
 
-export default aboutMe;
+export default AboutMe;
