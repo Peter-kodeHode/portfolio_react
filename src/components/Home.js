@@ -1,6 +1,14 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import {
+  BrowserRouter,
+  HashRouter,
+  Outlet,
+  Routes,
+  Route,
+  Link} 
+  from "react-router-dom";
 
 
 
@@ -12,7 +20,7 @@ function Home(){
 
     return(
         <>
-         <Header/>
+         
         <main id="swup" className="transition-fade">
     <div className="introduction">
       <p>
@@ -27,16 +35,16 @@ function Home(){
     <div className="box-container">
       <div className="black-box1">
         <div className="h1-box">
-          <a href="/aboutme.html">MEG</a>
+         <Link to="/aboutme">MEG</Link>
         </div>
       </div>
       <div className="white-box1">
         <img src={PoddinFace} alt=""/>
       </div>
-
+      
       <div className="black-box2">
         <div className="h1-box">
-          <a href="/projects.html">PROSJEKTER</a>
+          <Link to="projects">PROSJEKTER</Link>
         </div>
       </div>
       <div className="white-box2">
@@ -49,7 +57,7 @@ function Home(){
     </div>
   </main>
   
-      <Footer/>
+      
        
         </>
 
