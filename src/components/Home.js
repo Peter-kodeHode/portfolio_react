@@ -1,12 +1,5 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 import {
-  BrowserRouter,
-  HashRouter,
-  Outlet,
-  Routes,
-  Route,
   Link} 
   from "react-router-dom";
 
@@ -20,7 +13,6 @@ function Home(){
 
     return(
         <>
-         
         <main id="swup" className="transition-fade">
     <div className="introduction">
       <p>
@@ -56,15 +48,7 @@ function Home(){
       <img src={ChainImg} alt=""/>
     </div>
   </main>
-  
-      
-       
         </>
-
-
-        
-        
-
     );
     
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+
 
 const MyFace = process.env.PUBLIC_URL + "/images/itsme.jpg"
 const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
@@ -9,7 +8,6 @@ const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 function AboutMe() {
     return(
         <>
-         
         <main id="swup" className="transition-fade">
     <div className="aboutme">
       <h1>Litt om meg</h1>

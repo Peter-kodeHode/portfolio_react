@@ -1,11 +1,8 @@
 import React from "react";
 import {
-  BrowserRouter,
   HashRouter,
-  Outlet,
   Routes,
-  Route,
-  Link} 
+  Route,} 
   from "react-router-dom";
 import './App.css';
 import Header from "./components/Header"
@@ -21,7 +18,6 @@ import Projects from "./components/Projects";
 function App() {
   return (
     
-   
     <div className="App">
       
     <HashRouter>
@@ -33,10 +29,8 @@ function App() {
       </Routes> 
       <Footer/>
     </HashRouter>
-    
+
     </div>
-    
-    
   );
 }
 
