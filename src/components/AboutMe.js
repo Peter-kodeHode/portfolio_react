@@ -9,7 +9,7 @@ const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 function AboutMe() {
     return(
         <>
-         {/* test */}
+         
         <main id="swup" className="transition-fade">
     <div className="aboutme">
       <h1>Litt om meg</h1>
