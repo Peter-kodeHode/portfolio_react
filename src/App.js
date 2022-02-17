@@ -26,7 +26,11 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="aboutme" element={<AboutMe/>}/>
         <Route path="projects" element={<Projects/>}/>
+<<<<<<< HEAD
       </Routes>  
+=======
+      </Routes> 
+>>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
       <Footer/>
     </HashRouter>
 

@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import {
+  Link} 
+  from "react-router-dom";
 
 
 
@@ -12,7 +13,10 @@ function Home(){
 
     return(
         <>
+<<<<<<< HEAD
         
+=======
+>>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
         <main id="swup" className="transition-fade">
     <div className="introduction">
       <p>
@@ -27,16 +31,16 @@ function Home(){
     <div className="box-container">
       <div className="black-box1">
         <div className="h1-box">
-          <a href="/aboutme.html">MEG</a>
+         <Link to="/aboutme">MEG</Link>
         </div>
       </div>
       <div className="white-box1">
         <img src={PoddinFace} alt=""/>
       </div>
-
+      
       <div className="black-box2">
         <div className="h1-box">
-          <a href="/projects.html">PROSJEKTER</a>
+          <Link to="projects">PROSJEKTER</Link>
         </div>
       </div>
       <div className="white-box2">
@@ -48,15 +52,13 @@ function Home(){
       <img src={ChainImg} alt=""/>
     </div>
   </main>
+<<<<<<< HEAD
   
     
        
+=======
+>>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
         </>
-
-
-        
-        
-
     );
     
 }

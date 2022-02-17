@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 
 const BlackJackImg = process.env.PUBLIC_URL + "/images/blackjack.png"
 const SunnySideImg = process.env.PUBLIC_URL + "/images/sunnyside.png"
@@ -11,7 +9,11 @@ const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 function Projects() {
     return(
 <>
+<<<<<<< HEAD
     
+=======
+     
+>>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
 <main id="swup" className="transition-fade">
     <div className="aboutme">
       <h1>PROSJEKTER</h1>
