@@ -8,10 +8,6 @@ const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 function AboutMe() {
     return(
         <>
-<<<<<<< HEAD
-        
-=======
->>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
         <main id="swup" className="transition-fade">
     <div className="aboutme">
       <h1>Litt om meg</h1>
@@ -54,10 +50,7 @@ function AboutMe() {
       <img src={ChainImg} alt=""/>
     </div>
   </main>
-<<<<<<< HEAD
-=======
  
->>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
         </>
     );
 }

@@ -13,10 +13,6 @@ function Home(){
 
     return(
         <>
-<<<<<<< HEAD
-        
-=======
->>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
         <main id="swup" className="transition-fade">
     <div className="introduction">
       <p>
@@ -52,12 +48,6 @@ function Home(){
       <img src={ChainImg} alt=""/>
     </div>
   </main>
-<<<<<<< HEAD
-  
-    
-       
-=======
->>>>>>> 99ba9d482ffae31a058f7b89eae7d5dbcc367e7b
         </>
     );
     
