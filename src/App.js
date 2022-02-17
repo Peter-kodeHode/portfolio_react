@@ -1,11 +1,8 @@
 import React from "react";
 import {
-  BrowserRouter,
   HashRouter,
-  Outlet,
   Routes,
-  Route,
-  Link} 
+  Route,} 
   from "react-router-dom";
 import './App.css';
 import Header from "./components/Header"
@@ -21,21 +18,19 @@ import Projects from "./components/Projects";
 function App() {
   return (
     
-   
     <div className="App">
-         <HashRouter>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="aboutme" element={<AboutMe/>}/>
-      <Route path="projects" element={<Projects/>}/>
-    </Routes> 
+      
+    <HashRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="aboutme" element={<AboutMe/>}/>
+        <Route path="projects" element={<Projects/>}/>
+      </Routes>  
+      <Footer/>
     </HashRouter>
-   
-          
-          
+
     </div>
-    
-    
   );
 }
 

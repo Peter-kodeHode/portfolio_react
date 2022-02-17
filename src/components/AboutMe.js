@@ -9,7 +9,7 @@ const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 function AboutMe() {
     return(
         <>
-        <Header/>
+        
         <main id="swup" className="transition-fade">
     <div className="aboutme">
       <h1>Litt om meg</h1>
@@ -52,7 +52,6 @@ function AboutMe() {
       <img src={ChainImg} alt=""/>
     </div>
   </main>
-  <Footer/>
         </>
     );
 }

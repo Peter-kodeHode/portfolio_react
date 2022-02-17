@@ -12,7 +12,7 @@ function Home(){
 
     return(
         <>
-         <Header/>
+        
         <main id="swup" className="transition-fade">
     <div className="introduction">
       <p>
@@ -49,7 +49,7 @@ function Home(){
     </div>
   </main>
   
-      <Footer/>
+    
        
         </>
 
