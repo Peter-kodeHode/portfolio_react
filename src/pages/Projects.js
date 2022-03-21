@@ -1,16 +1,14 @@
 import React from "react";
-
-const BlackJackImg = process.env.PUBLIC_URL + "/images/blackjack.png"
-const SunnySideImg = process.env.PUBLIC_URL + "/images/sunnyside.png"
-const FigmaImg = process.env.PUBLIC_URL + "/images/figma.png"
-const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
-
+import BlackJackImg from "../images/Projects/blackjack.png";
+import SunnySideImg from "../images/Projects/sunnyside.png";
+import FigmaImg from "../images/Projects/figma.png";
+import ChainImg from "../images/Projects/chains.jpg";
 
 function Projects() {
     return(
 <>
      
-<main id="swup" className="transition-fade">
+
     <div className="aboutme">
       <h1>PROSJEKTER</h1>
     </div>
@@ -52,7 +50,7 @@ function Projects() {
     <div className="filler-image">
       <img src={ChainImg} alt=""/>
     </div>
-  </main>
+  
 
   
 </>

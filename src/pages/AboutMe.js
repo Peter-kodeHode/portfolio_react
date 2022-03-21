@@ -1,14 +1,13 @@
 import React from "react";
+import MyFace from "../images/AboutMe/itsme.jpg";
+import ChainImg from "../images/AboutMe/chains.jpg";
 
-
-const MyFace = process.env.PUBLIC_URL + "/images/itsme.jpg"
-const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 
 
 function AboutMe() {
     return(
         <>
-        <main id="swup" className="transition-fade">
+       
     <div className="aboutme">
       <h1>Litt om meg</h1>
       
@@ -49,8 +48,6 @@ function AboutMe() {
     <div className="filler-image" >
       <img src={ChainImg} alt=""/>
     </div>
-  </main>
- 
         </>
     );
 }

@@ -2,18 +2,16 @@ import React from "react";
 import {
   Link} 
   from "react-router-dom";
+import PoddinFace from "../images/Home/poddinfacerealvector.png";
+import CodeImg from "../images/Home/code.jpg";
+import ChainImg from "../images/Home/chains.jpg";
 
-
-
-const PoddinFace = process.env.PUBLIC_URL + "/images/poddinfacerealvector.png"
-const CodeImg = process.env.PUBLIC_URL + "/images/code.jpg"
-const ChainImg = process.env.PUBLIC_URL + "/images/chains.jpg"
 
 function Home(){
 
     return(
         <>
-        <main id="swup" className="transition-fade">
+        
     <div className="introduction">
       <p>
         Hei og velkommen! Mitt navn er Peter Daniel Nygaard og jeg driver med front-end!
@@ -47,7 +45,6 @@ function Home(){
     <div className="filler-image">
       <img src={ChainImg} alt=""/>
     </div>
-  </main>
         </>
     );
     

@@ -1,19 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter, 
-  Outlet,
-  Routes,
-  Route,
-  Link} 
-  from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import AboutMe from "./components/AboutMe";
-import Projects from "./components/Projects";
-import Home from "./components/Home";
+
 
 
 ReactDOM.render(

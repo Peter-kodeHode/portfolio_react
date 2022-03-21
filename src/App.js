@@ -5,11 +5,11 @@ import {
   Route,} 
   from "react-router-dom";
 import './App.css';
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import Home from "./components/Home"
-import AboutMe from "./components/AboutMe";
-import Projects from "./components/Projects";
+import Header from "./pages/Header";
+import Footer from "./pages/Footer";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import AboutMe from "./pages/AboutMe"
 
 
 
@@ -17,9 +17,7 @@ import Projects from "./components/Projects";
 
 function App() {
   return (
-    
     <div className="App">
-      
     <HashRouter>
       <Header/>
       <Routes>
@@ -29,7 +27,6 @@ function App() {
       </Routes> 
       <Footer/>
     </HashRouter>
-
     </div>
   );
 }
