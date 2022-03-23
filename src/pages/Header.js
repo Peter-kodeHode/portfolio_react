@@ -18,12 +18,15 @@ function Header(){
             alt="Button to about me page"/>
         </Link>
         <Link to="/">
-          <img className="home" src={HomeNav}
+          <img className="home"
+          src={HomeNav}
            alt="Home button" />
         </Link>
         <Link to="/projects">
-          <img className="checklist" src={CheckList}
-           alt="Button to projects page" />
+          <img 
+            className="checklist"
+           src={CheckList}
+           alt="Button to projects page"/>
         </Link>
   
       </div>
