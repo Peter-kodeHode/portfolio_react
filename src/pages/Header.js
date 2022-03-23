@@ -12,7 +12,9 @@ function Header(){
 
       <div className="navbar">
         <Link to="/aboutme">
-           <img className="logo" src={PdLogo}
+           <img 
+            className="logo" 
+            src={PdLogo}
             alt="Button to about me page"/>
         </Link>
         <Link to="/">

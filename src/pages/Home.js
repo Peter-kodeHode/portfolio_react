@@ -25,25 +25,35 @@ function Home(){
     <div className="box-container">
       <div className="black-box1">
         <div className="h1-box">
-         <Link to="/aboutme">MEG</Link>
+        <Link to="/aboutme">
+           MEG
+        </Link>
         </div>
       </div>
       <div className="white-box1">
-        <img src={PoddinFace} alt=""/>
+        <img
+        src={PoddinFace}
+        alt=""/>
       </div>
       
       <div className="black-box2">
         <div className="h1-box">
-          <Link to="projects">PROSJEKTER</Link>
+          <Link to="projects">
+            PROSJEKTER
+          </Link>
         </div>
       </div>
       <div className="white-box2">
-        <img src={CodeImg} alt=""/>
+        <img
+        src={CodeImg}
+        alt=""/>
       </div>
     </div>
 
     <div className="filler-image">
-      <img src={ChainImg} alt=""/>
+      <img
+      src={ChainImg}
+      alt=""/>
     </div>
         </>
     );

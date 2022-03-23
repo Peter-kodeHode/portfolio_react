@@ -11,7 +11,10 @@ function AboutMe() {
     <div className="aboutme">
       <h1>Litt om meg</h1>
       
-      <img className="aboutgrey" src={MyFace} alt="Peter"/>
+      <img 
+      className="aboutgrey" 
+      src={MyFace} 
+      alt="Peter"/>
 
       <p>
         Hei! Jeg heter Peter og jeg er en relativt fersk spiller i

@@ -3,8 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none;
 }
 
 :root {
@@ -16,12 +14,8 @@
 
 body {
   background-color: var(--secondary);
-  overflow-y: scroll;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
 
 .navbar {
   border-bottom: solid var(--primary) 6px;
@@ -67,11 +61,6 @@ body::-webkit-scrollbar {
   transition: 500ms;
 }
 
-/* .scroll-snap {
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
-} */
 
 .introduction {
   display: flex;
@@ -121,16 +110,6 @@ body::-webkit-scrollbar {
   max-width: 100%;
   max-height: 100%;
 }
-
-
-
-/* Gotta fix this scroll snap crap */
-
-/* .scroll-snap2 {
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
-} */
 
 .box-container a {
   color: var(--secondary);

@@ -13,7 +13,12 @@ function Projects() {
       <h1>PROSJEKTER</h1>
     </div>
     <div className="dropdown">
-      <a href="https://github.com/Peter-kodeHode/blackjack"><img className="greyimg" src={BlackJackImg}  alt=""/></a>
+      <a href="https://github.com/Peter-kodeHode/blackjack">
+        <img
+        className="greyimg"
+        src={BlackJackImg} 
+        alt=""/>
+        </a>
       <div className="dropdown-content">
         <p>Dette er et prosjekt som ble påbegynt i Scrimba sitt javascript kurs som jeg tok videre
           og bygget på med nye funksjoner som f.eks at man kan vedde mot dealeren og man kan skrive inn navnet sitt. Har
@@ -26,7 +31,13 @@ function Projects() {
 
     <div className="dropdown">
       
-     <a href="https://github.com/Peter-kodeHode/sunnsyside"><img className="greyimg" src={SunnySideImg} alt=""/></a> <div className="dropdown-content">
+     <a href="https://github.com/Peter-kodeHode/sunnsyside">
+       <img
+       className="greyimg"
+       src={SunnySideImg}
+       alt=""/>
+       </a> 
+       <div className="dropdown-content">
         <p>Dette er en av flere oppgaver fra <a href="www.frontendmentor.io">Frontend Mentor</a> som jeg har vært
           gjennom. I dette prosjektet ble det brukt HTML og CSS med en del fokus på grid. Fikk tilegnet meg mye ny
           erfaring om grid og annen CSS. </p>
@@ -34,7 +45,12 @@ function Projects() {
     </div>
 
     <div className="dropdown">
-     <a href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803"><img className="greyimg" src={FigmaImg} alt=""/></a> 
+     <a href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803">
+       <img
+       className="greyimg"
+       src={FigmaImg}
+       alt=""/>
+       </a> 
       <div className="dropdown-content">
         <p>Dette er et gruppeprosjekt jeg har gjort med to medstudenter. Vi ble gitt i oppgave fra en reell arbeidsgiver
           å designe en side for et opplæringskontor. Jeg lagde logoene selv og var ellers også med på å designe resten
@@ -48,7 +64,9 @@ function Projects() {
       <h1>Mer kommer fortløpende</h1>
     </div>
     <div className="filler-image">
-      <img src={ChainImg} alt=""/>
+      <img
+      src={ChainImg}
+      alt=""/>
     </div>
   
 
