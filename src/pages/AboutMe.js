@@ -1,13 +1,14 @@
 import React from "react";
 import MyFace from "../images/AboutMe/itsme.jpg";
 import ChainImg from "../images/AboutMe/chains.jpg";
+import AnimatedPage from "./AllPages/AnimatedPage";
 
 
 
 function AboutMe() {
     return(
         <>
-       
+       <AnimatedPage>
     <div className="aboutme">
       <h1>Litt om meg</h1>
       
@@ -51,6 +52,7 @@ function AboutMe() {
     <div className="filler-image" >
       <img src={ChainImg} alt=""/>
     </div>
+    </AnimatedPage>
         </>
     );
 }

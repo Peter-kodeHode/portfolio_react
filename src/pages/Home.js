@@ -5,13 +5,13 @@ import {
 import PoddinFace from "../images/Home/poddinfacerealvector.png";
 import CodeImg from "../images/Home/code.jpg";
 import ChainImg from "../images/Home/chains.jpg";
-
+import AnimatedPage from "./AllPages/AnimatedPage";
 
 function Home(){
 
     return(
         <>
-        
+        <AnimatedPage>
     <div className="introduction">
       <p>
         Hei og velkommen! Mitt navn er Peter Daniel Nygaard og jeg driver med front-end!
@@ -55,6 +55,7 @@ function Home(){
       src={ChainImg}
       alt=""/>
     </div>
+    </AnimatedPage>
         </>
     );
     

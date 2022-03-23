@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  HashRouter,
+  useLocation,
   Routes,
   Route,} 
   from "react-router-dom";
@@ -10,23 +10,28 @@ import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe"
+import { AnimatePresence } from "framer-motion";
 
 
 
 
 
 function App() {
+  const location = useLocation()
   return (
     <div className="App">
-    <HashRouter>
       <Header/>
-      <Routes>
+      <AnimatePresence exitBeforeEnter>
+      <Routes 
+        key={location.pathname} 
+        location={location}>
         <Route path="/" element={<Home/>}/>
         <Route path="aboutme" element={<AboutMe/>}/>
         <Route path="projects" element={<Projects/>}/>
       </Routes> 
+      </AnimatePresence>
       <Footer/>
-    </HashRouter>
+    
     </div>
   );
 }
