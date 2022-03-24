@@ -14,21 +14,25 @@ function Home(){
         <AnimatedPage>
     <div className="introduction">
       <p>
-        Hei og velkommen! Mitt navn er Peter Daniel Nygaard og jeg driver med front-end!
+        Hei og velkommen! 
+        <br/>
+        Mitt navn er Peter Daniel Nygaard 
+        <br/>
+        og jeg driver med front-end!
       </p>
+      <br/>
+      <p className="smiley">:)</p>
     </div>
 
-    <div className="smiley">
-      <p>:)</p>
-    </div>
+  
 
     <div className="box-container">
       <div className="black-box1">
-        <div className="h1-box">
+        
         <Link to="/aboutme">
            MEG
         </Link>
-        </div>
+        
       </div>
       <div className="white-box1">
         <img
@@ -37,11 +41,11 @@ function Home(){
       </div>
       
       <div className="black-box2">
-        <div className="h1-box">
+        
           <Link to="projects">
             PROSJEKTER
           </Link>
-        </div>
+        
       </div>
       <div className="white-box2">
         <img

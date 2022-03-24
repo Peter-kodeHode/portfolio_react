@@ -10,7 +10,7 @@ import CheckList from "../images/Header/checklist.png"
 function Header(){
     return(
 
-      <div className="navbar">
+      <nav className="navbar">
         <Link to="/aboutme">
            <img 
             className="logo" 
@@ -29,7 +29,7 @@ function Header(){
            alt="Button to projects page"/>
         </Link>
   
-      </div>
+      </nav>
     );
 }
 
