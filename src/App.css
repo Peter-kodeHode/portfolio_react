@@ -122,7 +122,7 @@ body {
 
 .box-container a:hover {
   font-weight: bold;
-  font-size: 72px;
+  font-size: 4rem;
   transition: 200ms;
 }
 
@@ -341,23 +341,6 @@ body {
   margin-bottom: 60px;
 }
 
-.transition-fade {
-  opacity: 1;
-  transition: 750ms;
-  transform: translateX(0);
-  transform-origin: left;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
-  transform: translateX(100%);
-}
-
-html.is-leaving .transition-fade {
-  opacity: 0;
-  transform: translateX(0);
-}
-
 .dropdown {
   position: relative;
   display: flex;
@@ -424,18 +407,24 @@ html.is-leaving .transition-fade {
     width: 4em;
   }
   .introduction p {
-    font-size: 1.5rem;
-    margin-top: 1em;
+    font-size: 1rem;
   }
   .smiley {
     margin-bottom: 1em;
+    transition:25s;
   }
   .smiley:active {
     transform: rotate(260deg);
-    transition: 50ms;
+    transition:1ms;
+  }
+  .box-container{
+ 
   }
   .box-container a {
     font-size: 1.5rem;
+  }
+  .box-container a:active {
+    font-weight:bold;
   }
   .filler-image img {
     height: 6em;

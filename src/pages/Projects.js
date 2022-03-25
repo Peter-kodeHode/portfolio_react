@@ -45,11 +45,11 @@ function Projects() {
               annen CSS.{" "}
             </p>
           </div>
+
+        </div>
           <a target="blank" href="https://github.com/Peter-kodeHode">
             <img src={GitHubImg} alt="Github logo" />
           </a>
-        </div>
-
         <div className="dropdown">
           <a href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803">
             <img className="greyimg" src={FigmaImg} alt="" />
