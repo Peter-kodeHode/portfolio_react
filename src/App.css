@@ -19,7 +19,8 @@ body {
 }
 
 .navbar {
-  border: solid var(--primary) 6px;
+  border-top: solid var(--primary) 6px;
+  border-bottom: solid var(--primary) 6px;
   min-width: 100%;
   max-height: 10em;
   display: flex;
@@ -41,15 +42,15 @@ body {
 .logo {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
   transition: 1000ms;
-  border: solid black 6px;
-  border-radius: 10px;
+  border: solid black 5px;
+  border-radius: 0.5rem;
 }
 
 .home {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   transition: 1000ms;
-  border: solid black 6px;
-  border-radius: 10px;
+  border: solid black 5px;
+  border-radius: 0.5rem;
 }
 
 .checklist {
@@ -136,7 +137,16 @@ body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 3rem;
+}
+
+@media (max-width: 650px){
+  .box-container a{
+    font-size:2rem;
+  }
+  .box-container a:hover{
+    font-size: 2rem;
+  }
 }
 
 .box-container img {
@@ -229,7 +239,7 @@ body {
 }
 
 .socials {
-  padding-top: 50px;
+  margin-top: 3.5rem;
 }
 
 .socials img {
@@ -244,11 +254,8 @@ body {
 }
 
 .contact-info {
-  margin: 50px auto 0 auto;
+  margin: 3.5rem auto 0 auto;
 }
-
-/*Not centre aligned either?*/
-/* Not flexing properly. Gotta fix */
 
 .contact-info ul {
   display: flex;
@@ -279,7 +286,7 @@ body {
   text-decoration: none;
 }
 
-.aboutme {
+.aboutme, .projects {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,11 +297,11 @@ body {
 .aboutgrey {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  transition: 500ms ease-in;
-  max-height: 200px;
-  width: 150px;
+  transition: 500ms ease-out;
+  max-width: 25vh;
+  max-width: 25vw;
   border: 6px var(--primary) solid;
-  border-radius: 50%;
+  
 }
 
 .aboutgrey:hover {
@@ -302,43 +309,42 @@ body {
   -webkit-filter: grayscale(0);
   transition: 500ms ease-in;
   max-height: 200px;
-  width: 150px;
-  border-radius: 2em;
+  border-radius: 25%;
 }
 
-.aboutme h1 {
+.aboutme h1, .projects h1 {
   display: flex;
   color: var(--primary);
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 4rem;
   text-align: center;
-  margin: 2rem 0 2rem 0;
+  margin-top:2.5rem;
   transition: 400ms;
   max-width: 100%;
 }
 
-.aboutme h1:hover {
+.aboutme h1:hover, .projects h1:hover {
   text-decoration: underline;
   cursor: default;
 }
 
-.aboutme p {
+
+.aboutme p, .projects p {
   display: flex;
   color: var(--primary);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.2rem;
   text-align: center;
   margin: 2rem 0 2rem 0;
-  line-height: 60px;
-  border: var(--primary) 4px solid;
-  width: 75vw;
-  padding: 2em;
+  line-height: 2.5rem;
+  border: var(--primary) 2px solid;
+  padding: 1rem;
 }
 
-.aboutme :last-child {
-  margin-bottom: 60px;
+.projects :last-child {
+  margin-bottom: 4rem;
 }
 
 .dropdown {
@@ -346,7 +352,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 2.5rem auto;
   max-width: max-content;
 }
 
@@ -355,8 +361,8 @@ body {
   background-color: var(--primary);
   color: var(--secondary);
   max-width: 800px;
-  font-size: 3rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 2.5rem;
   max-height: 0;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.452);
   z-index: 1;
@@ -389,8 +395,8 @@ body {
   -webkit-filter: grayscale(100%);
   transition: 1s ease-in;
   border-radius: 4em;
-  width: 1000px;
-  height: 600px;
+  max-width: 85vw;
+  height:auto;
 }
 
 .greyimg:hover {
@@ -399,26 +405,53 @@ body {
   transition: 1s ease-in;
 }
 
-@media only screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .navbar a {
     margin: 1em;
   }
   .navbar img {
     width: 4em;
   }
+ 
+  .logo{
+  transition: all 1000ms ease-in-out;
+  }
+  .logo:active{
+    -webkit-transform: rotate(180deg);
+    transform:scale(1.2) rotate(180deg);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    transition: 1ms;
+  }
+  .checklist{
+    transition: all 1000ms ease-in-out;
+  }
+  .checklist:active {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    transition: 1ms;
+    transform:scale(1.2);
+  }
+  .home:active {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    transition: 1ms;
+    transform:scale(1.2);
+  }
+  .home{
+    transition:all 1000ms ease-in-out;
+  }
   .introduction p {
     font-size: 1rem;
   }
   .smiley {
     margin-bottom: 1em;
-    transition:25s;
+    transition:10s;
   }
   .smiley:active {
     transform: rotate(260deg);
     transition:1ms;
   }
-  .box-container{
- 
+  .smiley:hover{
+    transform:none;
+    transition:none;
   }
   .box-container a {
     font-size: 1.5rem;
@@ -433,8 +466,9 @@ body {
     flex-wrap: wrap;
     margin: 1rem 0 1rem 0;
   }
-  .aboutme h1 {
+  .projects h1 {
     font-size: 2.5rem;
+    
   }
   .dropdown-content p {
     font-size: 1rem;
@@ -447,5 +481,34 @@ body {
   }
   .github-projects {
     visibility: visible;
+    background-color: var(--primary);
+    text-align: center;
+  }
+  .aboutme h1{
+    font-size:2.5rem;
+    margin-bottom:2rem;
+  }
+  .aboutme p:last-child{
+    margin-bottom:4rem;
+  }
+  .aboutgrey:active {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    transition: 100ms ease-in;
+    max-height: 200px;
+    border-radius: 25%;
+  }
+  .filler-image{
+    border-top:solid var(--primary) 6px;
+  }
+  .filler-image:active{
+    transition:0ms;
+    filter:grayscale(0%);
+  }
+  .socials{
+    margin-top:2rem;
+  }
+  .contact-info{
+    margin: 2rem auto 0 auto;
   }
 }
