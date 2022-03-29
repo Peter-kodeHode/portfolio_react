@@ -3,7 +3,7 @@ import BlackJackImg from "../images/Projects/blackjack.png";
 import SunnySideImg from "../images/Projects/sunnyside.png";
 import FigmaImg from "../images/Projects/figma.png";
 import ChainImg from "../images/Projects/chains.jpg";
-import AnimatedPage from "./AllPages/AnimatedPage";
+import AnimatedPage from "../globalComponents/AnimatedPage";
 import GitHubImg from "../images/Footer/github.png";
 
 function Projects() {

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PdLogo from "../images/Header/Pd v2.png";
-import HomeNav from "../images/Header/home.png";
-import CheckList from "../images/Header/checklist.png";
+import PdLogo from "../images/StyledNavBar/Pd v2.png";
+import HomeNav from "../images/StyledNavBar/home.png";
+import CheckList from "../images/StyledNavBar/checklist.png";
 
-function Header() {
+function StyledNavBar() {
   return (
     <nav className="navbar">
       <Link to="/aboutme">
@@ -24,4 +24,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default StyledNavBar;

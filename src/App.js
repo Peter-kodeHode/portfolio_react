@@ -1,37 +1,26 @@
 import React from "react";
-import {
-  useLocation,
-  Routes,
-  Route,} 
-  from "react-router-dom";
-import './App.css';
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
+import { useLocation, Routes, Route } from "react-router-dom";
+import "./App.css";
+import StyledNavBar from "./globalComponents/NavBar";
+import Footer from "./globalComponents/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import AboutMe from "./pages/AboutMe"
+import AboutMe from "./pages/AboutMe";
 import { AnimatePresence } from "framer-motion";
 
-
-
-
-
 function App() {
-  const location = useLocation()
+  const location = useLocation();
   return (
     <div className="App">
-      <Header/>
+      <StyledNavBar />
       <AnimatePresence exitBeforeEnter>
-      <Routes 
-        key={location.pathname} 
-        location={location}>
-        <Route path="/" element={<Home/>}/>
-        <Route path="aboutme" element={<AboutMe/>}/>
-        <Route path="projects" element={<Projects/>}/>
-      </Routes> 
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="aboutme" element={<AboutMe />} />
+          <Route path="projects" element={<Projects />} />
+        </Routes>
       </AnimatePresence>
-      <Footer/>
-    
+      <Footer />
     </div>
   );
 }

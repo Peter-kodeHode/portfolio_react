@@ -1,7 +1,7 @@
 import React from "react";
 import MyFace from "../images/AboutMe/itsme.jpg";
 import ChainImg from "../images/AboutMe/chains.jpg";
-import AnimatedPage from "./AllPages/AnimatedPage";
+import AnimatedPage from "../globalComponents/AnimatedPage";
 
 function AboutMe() {
   return (
