@@ -5,13 +5,17 @@ import FigmaImg from "../images/Projects/figma.png";
 import ChainImg from "../images/Projects/chains.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import GitHubImg from "../images/Footer/github.png";
-
 function Projects() {
   return (
     <>
       <AnimatedPage>
-        <div className="aboutme">
+        <div className="projects">
           <h1>PROSJEKTER</h1>
+        </div>  
+        <div className="github-projects">
+          <a target="blank" href="https://github.com/Peter-kodeHode">
+            <img src={GitHubImg} alt="Github logo" />
+          </a>
         </div>
         <div className="dropdown">
           <a href="https://github.com/Peter-kodeHode/blackjack">
@@ -31,7 +35,11 @@ function Projects() {
             </p>
           </div>
         </div>
-
+        <div className="github-projects">
+          <a target="blank" href="https://github.com/Peter-kodeHode">
+            <img src={GitHubImg} alt="Github logo" />
+          </a>
+        </div>
         <div className="dropdown">
           <a href="https://github.com/Peter-kodeHode/sunnsyside">
             <img className="greyimg" src={SunnySideImg} alt="" />
@@ -45,11 +53,13 @@ function Projects() {
               annen CSS.{" "}
             </p>
           </div>
+
+        </div>
+        <div className="github-projects">
           <a target="blank" href="https://github.com/Peter-kodeHode">
             <img src={GitHubImg} alt="Github logo" />
           </a>
         </div>
-
         <div className="dropdown">
           <a href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803">
             <img className="greyimg" src={FigmaImg} alt="" />
@@ -66,10 +76,19 @@ function Projects() {
               noe uklare.{" "}
             </p>
           </div>
+        </div>        <div className="github-projects">
+          <a target="blank" href="https://github.com/Peter-kodeHode">
+            <img src={GitHubImg} alt="Github logo" />
+          </a>
         </div>
 
-        <div className="aboutme">
+        <div className="projects">
           <h1>Mer kommer fortløpende</h1>
+        </div>
+        <div className="github-projects">
+          <a target="blank" href="https://github.com/Peter-kodeHode">
+            <img src={GitHubImg} alt="Github logo" />
+          </a>
         </div>
         <div className="filler-image">
           <img src={ChainImg} alt="" />
