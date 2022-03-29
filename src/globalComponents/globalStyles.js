@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import FontStyle from "../fonts/fontStyles";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -15,6 +16,7 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
     min-width: 100%;
+    font-family: "Montserrat-regular";
 }
 `;
 

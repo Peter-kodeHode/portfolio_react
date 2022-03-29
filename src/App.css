@@ -140,11 +140,11 @@ body {
   font-size: 3rem;
 }
 
-@media (max-width: 650px){
-  .box-container a{
-    font-size:2rem;
+@media (max-width: 650px) {
+  .box-container a {
+    font-size: 2rem;
   }
-  .box-container a:hover{
+  .box-container a:hover {
     font-size: 2rem;
   }
 }
@@ -286,7 +286,8 @@ body {
   text-decoration: none;
 }
 
-.aboutme, .projects {
+.aboutme,
+.projects {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -301,7 +302,6 @@ body {
   max-width: 25vh;
   max-width: 25vw;
   border: 6px var(--primary) solid;
-  
 }
 
 .aboutgrey:hover {
@@ -312,25 +312,27 @@ body {
   border-radius: 25%;
 }
 
-.aboutme h1, .projects h1 {
+.aboutme h1,
+.projects h1 {
   display: flex;
   color: var(--primary);
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 4rem;
   text-align: center;
-  margin-top:2.5rem;
+  margin-top: 2.5rem;
   transition: 400ms;
   max-width: 100%;
 }
 
-.aboutme h1:hover, .projects h1:hover {
+.aboutme h1:hover,
+.projects h1:hover {
   text-decoration: underline;
   cursor: default;
 }
 
-
-.aboutme p, .projects p {
+.aboutme p,
+.projects p {
   display: flex;
   color: var(--primary);
   font-family: "Montserrat", sans-serif;
@@ -396,7 +398,7 @@ body {
   transition: 1s ease-in;
   border-radius: 4em;
   max-width: 85vw;
-  height:auto;
+  height: auto;
 }
 
 .greyimg:hover {
@@ -412,52 +414,52 @@ body {
   .navbar img {
     width: 4em;
   }
- 
-  .logo{
-  transition: all 1000ms ease-in-out;
+
+  .logo {
+    transition: all 1000ms ease-in-out;
   }
-  .logo:active{
+  .logo:active {
     -webkit-transform: rotate(180deg);
-    transform:scale(1.2) rotate(180deg);
+    transform: scale(1.2) rotate(180deg);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
     transition: 1ms;
   }
-  .checklist{
+  .checklist {
     transition: all 1000ms ease-in-out;
   }
   .checklist:active {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
     transition: 1ms;
-    transform:scale(1.2);
+    transform: scale(1.2);
   }
   .home:active {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
     transition: 1ms;
-    transform:scale(1.2);
+    transform: scale(1.2);
   }
-  .home{
-    transition:all 1000ms ease-in-out;
+  .home {
+    transition: all 1000ms ease-in-out;
   }
   .introduction p {
     font-size: 1rem;
   }
   .smiley {
     margin-bottom: 1em;
-    transition:10s;
+    transition: 10s;
   }
   .smiley:active {
     transform: rotate(260deg);
-    transition:1ms;
+    transition: 1ms;
   }
-  .smiley:hover{
-    transform:none;
-    transition:none;
+  .smiley:hover {
+    transform: none;
+    transition: none;
   }
   .box-container a {
     font-size: 1.5rem;
   }
   .box-container a:active {
-    font-weight:bold;
+    font-weight: bold;
   }
   .filler-image img {
     height: 6em;
@@ -468,7 +470,6 @@ body {
   }
   .projects h1 {
     font-size: 2.5rem;
-    
   }
   .dropdown-content p {
     font-size: 1rem;
@@ -484,12 +485,12 @@ body {
     background-color: var(--primary);
     text-align: center;
   }
-  .aboutme h1{
-    font-size:2.5rem;
-    margin-bottom:2rem;
+  .aboutme h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
-  .aboutme p:last-child{
-    margin-bottom:4rem;
+  .aboutme p:last-child {
+    margin-bottom: 4rem;
   }
   .aboutgrey:active {
     filter: none;
@@ -498,17 +499,17 @@ body {
     max-height: 200px;
     border-radius: 25%;
   }
-  .filler-image{
-    border-top:solid var(--primary) 6px;
+  .filler-image {
+    border-top: solid var(--primary) 6px;
   }
-  .filler-image:active{
-    transition:0ms;
-    filter:grayscale(0%);
+  .filler-image:active {
+    transition: 0ms;
+    filter: grayscale(0%);
   }
-  .socials{
-    margin-top:2rem;
+  .socials {
+    margin-top: 2rem;
   }
-  .contact-info{
+  .contact-info {
     margin: 2rem auto 0 auto;
   }
 }

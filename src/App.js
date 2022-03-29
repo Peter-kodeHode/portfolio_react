@@ -7,11 +7,13 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe";
 import { AnimatePresence } from "framer-motion";
+import GlobalStyle from "./globalComponents/globalStyles";
 
 function App() {
   const location = useLocation();
   return (
     <div className="App">
+      <GlobalStyle />
       <StyledNavBar />
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
