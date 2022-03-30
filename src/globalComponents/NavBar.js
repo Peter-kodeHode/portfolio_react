@@ -1,27 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PdLogo from "../images/StyledNavBar/Pd v2.png";
-import HomeNav from "../images/StyledNavBar/home.png";
-import CheckList from "../images/StyledNavBar/checklist.png";
+import LogoImg from "../images/NavBar/Pd v2.png";
+import HomeImg from "../images/NavBar/home.png";
+import CheckListImg from "../images/NavBar/checklist.png";
+import { StyledNavBar, Logo, Home, CheckList } from "./navBar/navBarStyles";
 
-function StyledNavBar() {
+function NavBar() {
   return (
-    <nav className="navbar">
+    <StyledNavBar>
       <Link to="/aboutme">
-        <img className="logo" src={PdLogo} alt="Button to about me page" />
+        <Logo src={LogoImg} alt="Button to about me page" />
       </Link>
       <Link to="/">
-        <img className="home" src={HomeNav} alt="Home button" />
+        <Home src={HomeImg} alt="Home button" />
       </Link>
       <Link to="/projects">
-        <img
-          className="checklist"
-          src={CheckList}
-          alt="Button to projects page"
-        />
+        <CheckList src={CheckListImg} alt="Button to projects page" />
       </Link>
-    </nav>
+    </StyledNavBar>
   );
 }
 
-export default StyledNavBar;
+export default NavBar;
