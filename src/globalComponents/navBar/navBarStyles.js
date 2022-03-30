@@ -10,7 +10,7 @@ export const StyledNavBar = styled.nav`
   position: relative;
   background-color: var(--secondary);
   & > a {
-    margin: 1em;
+    margin: 0.5em;
   }
   & > img {
     width: 5em;
