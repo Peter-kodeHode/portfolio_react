@@ -231,7 +231,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 100%;
-  min-height: 10em;
+  max-height: 15em;
   background: var(--primary);
   text-align: center;
   align-items: center;
@@ -440,12 +440,15 @@ body {
   .home {
     transition: all 1000ms ease-in-out;
   } */
+  .introduction {
+    height: 15em;
+  }
   .introduction p {
     font-size: 1rem;
   }
   .smiley {
     margin-bottom: 1em;
-    transition: 10s;
+    transition: ease-in-out 500ms;
   }
   .smiley:active {
     transform: rotate(260deg);
@@ -455,11 +458,24 @@ body {
     transform: none;
     transition: none;
   }
+  .box-container {
+    height: 15em;
+  }
   .box-container a {
     font-size: 1.5rem;
   }
   .box-container a:active {
     font-weight: bold;
+  }
+  .white-box1 img {
+    object-fit: contain;
+    height: 75%;
+    width: 75%;
+  }
+  .white-box2 img {
+    object-fit: fill;
+    height: 75%;
+    width: 75%;
   }
   .filler-image img {
     height: 6em;
@@ -506,10 +522,13 @@ body {
     transition: 0ms;
     filter: grayscale(0%);
   }
+  .footer {
+    max-height: 11em;
+  }
   .socials {
-    margin-top: 2rem;
+    margin-top: 1em;
   }
   .contact-info {
-    margin: 2rem auto 0 auto;
+    margin: 1rem auto 0 auto;
   }
 }
