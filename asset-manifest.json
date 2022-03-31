@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.fd79d9f7.css",
-    "main.js": "/portfolio_react/static/js/main.1aa3a226.js",
+    "main.css": "/portfolio_react/static/css/main.d687ecd8.css",
+    "main.js": "/portfolio_react/static/js/main.d300474b.js",
     "static/js/787.6e7ececb.chunk.js": "/portfolio_react/static/js/787.6e7ececb.chunk.js",
     "static/media/blackjack.png": "/portfolio_react/static/media/blackjack.e800578051526526771d.png",
-    "static/media/chains.jpg": "/portfolio_react/static/media/chains.f6a499ba2c5579b2c5ba.jpg",
     "static/media/code.jpg": "/portfolio_react/static/media/code.7ee9666e1779a3a67d8a.jpg",
+    "static/media/chains.jpg": "/portfolio_react/static/media/chains.f6a499ba2c5579b2c5ba.jpg",
     "static/media/sunnyside.png": "/portfolio_react/static/media/sunnyside.d55b2b2ccca1035d7da1.png",
     "static/media/figma.png": "/portfolio_react/static/media/figma.c2b633da914d1cddc33d.png",
     "static/media/itsme.jpg": "/portfolio_react/static/media/itsme.e3451f3f6736ae3eb854.jpg",
     "static/media/poddinfacerealvector.png": "/portfolio_react/static/media/poddinfacerealvector.6631817a68f6e0ba7f1d.png",
     "index.html": "/portfolio_react/index.html",
-    "main.fd79d9f7.css.map": "/portfolio_react/static/css/main.fd79d9f7.css.map",
-    "main.1aa3a226.js.map": "/portfolio_react/static/js/main.1aa3a226.js.map",
+    "main.d687ecd8.css.map": "/portfolio_react/static/css/main.d687ecd8.css.map",
+    "main.d300474b.js.map": "/portfolio_react/static/js/main.d300474b.js.map",
     "787.6e7ececb.chunk.js.map": "/portfolio_react/static/js/787.6e7ececb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd79d9f7.css",
-    "static/js/main.1aa3a226.js"
+    "static/css/main.d687ecd8.css",
+    "static/js/main.d300474b.js"
   ]
 }
