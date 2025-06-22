@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledNavBar = styled.nav`
   border: solid var(--primary) 6px;
@@ -14,17 +14,33 @@ export const StyledNavBar = styled.nav`
   & > a {
     margin: 2em;
     @media (max-width: 500px) {
+      margin: 1em;
     }
-    margin: 1em;
+  }
+`;
+
+// Create a base style for all icons
+const baseIconStyles = css`
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: all 500ms ease-in-out;
+  @media (max-width: 500px) {
+    width: 3em;
+  }
+
+  &:active {
+    transform: scale(1.2);
+    transition: 250ms all ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    @media (max-width: 500px) {
+      transition: 1ms;
+    }
   }
 `;
 
 export const Logo = styled.img`
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+  ${baseIconStyles}
   transition: all 1000ms ease-in-out;
-  @media (max-width: 500px) {
-    width: 3em;
-  }
+
   &:hover {
     transition: all 750ms ease-in-out;
     rotate: 1260deg;
@@ -47,11 +63,8 @@ export const Logo = styled.img`
 `;
 
 export const Home = styled.img`
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: all 500ms ease-in-out;
-  @media (max-width: 500px) {
-    width: 3em;
-  }
+  ${baseIconStyles}
+
   &:hover {
     transform: scale(1.2);
     transition: all 250ms ease-in-out;
@@ -60,36 +73,17 @@ export const Home = styled.img`
       transition: none;
     }
   }
-  &:active {
-    transform: scale(1.2);
-    @media (max-width: 500px) {
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
-      transition: 1ms;
-    }
-  }
 `;
 
 export const CheckList = styled.img`
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: all 500ms ease-in-out;
-  @media (max-width: 500px) {
-    width: 3em;
-  }
+  ${baseIconStyles}
+
   &:hover {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
     transition: all 250ms ease-in-out;
     @media (max-width: 500px) {
       filter: none;
       transition: none;
-    }
-  }
-  &:active {
-    transform: scale(1.2);
-    transition: 250ms all ease-in-out;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
-    @media (max-width: 500px) {
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
-      transition: 1ms;
     }
   }
 `;

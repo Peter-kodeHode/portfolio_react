@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledNavBar } from "./NavBar/navBarStyles";
-import { NavBarLinks } from "./NavBar/navBarConsts";
+import { StyledNavBar } from "./NavBar.styles";
+import { NavBarLinks } from "./NavBarLinks";
 
 function NavBar() {
   return (

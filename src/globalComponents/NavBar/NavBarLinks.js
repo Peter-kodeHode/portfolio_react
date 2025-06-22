@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CheckList, Home, Logo } from "./navBarStyles";
-import LogoImg from "C:/Users/Pd/Desktop/react_portfolio_github/src/images/NavBar/Pd v2.png";
-import HomeImg from "C:/Users/Pd/Desktop/react_portfolio_github/src/images/NavBar/home.png";
-import CheckListImg from "C:/Users/Pd/Desktop/react_portfolio_github/src/images/NavBar/checklist.png";
+import { CheckList, Home, Logo } from "./NavBar.styles";
+import LogoImg from "../../images/NavBar/Pd v2.png";
+import HomeImg from "../../images/NavBar/home.png";
+import CheckListImg from "../../images/NavBar/checklist.png";
 
 export const NavBarLinks = () => {
   return (
