@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledNavBar = styled.nav`
   border: solid var(--primary) 6px;
-  border-bottom: none;
+  
   min-width: 100%;
   max-height: 10em;
   display: flex;
@@ -28,8 +28,8 @@ const baseIconStyles = css`
   }
 
   &:active {
-    transform: scale(1.2);
-    transition: 250ms all ease-in-out;
+    transform: scale(1.5);
+    transition: 150ms all ease-in-out;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
     @media (max-width: 500px) {
       transition: 1ms;
@@ -39,19 +39,21 @@ const baseIconStyles = css`
 
 export const Logo = styled.img`
   ${baseIconStyles}
-  transition: all 1000ms ease-in-out;
-
+  
+  
   &:hover {
-    transition: all 750ms ease-in-out;
-    rotate: 1260deg;
+
+    transform:  rotate(540deg);
+    transition: all 1000ms ease-in-out;
+    
     @media (max-width: 500px) {
       transform: none;
       rotate: none;
     }
   }
   &:active {
-    transform: scale(1.2);
-    transition: 250ms all ease-in-out;
+    transform: scale(1.3);
+    transition: 50ms all ease-in-out;
 
     @media (max-width: 500px) {
       -webkit-transform: rotate(180deg);
@@ -66,8 +68,8 @@ export const Home = styled.img`
   ${baseIconStyles}
 
   &:hover {
-    transform: scale(1.2);
-    transition: all 250ms ease-in-out;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    transition: all 200ms ease;
     @media (max-width: 500px) {
       transform: none;
       transition: none;
@@ -80,7 +82,7 @@ export const CheckList = styled.img`
 
   &:hover {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
-    transition: all 250ms ease-in-out;
+    transition: all 200ms ease;
     @media (max-width: 500px) {
       filter: none;
       transition: none;
