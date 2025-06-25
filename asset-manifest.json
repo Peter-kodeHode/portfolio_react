@@ -1,22 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.b33dea2f.css",
-    "main.js": "/portfolio_react/static/js/main.196e22bf.js",
-    "static/js/787.6e7ececb.chunk.js": "/portfolio_react/static/js/787.6e7ececb.chunk.js",
+    "main.css": "/portfolio_react/static/css/main.cdb309ac.css",
+    "main.js": "/portfolio_react/static/js/main.7b74b253.js",
     "static/media/blackjack.png": "/portfolio_react/static/media/blackjack.e800578051526526771d.png",
     "static/media/code.jpg": "/portfolio_react/static/media/code.7ee9666e1779a3a67d8a.jpg",
-    "static/media/chains.jpg": "/portfolio_react/static/media/chains.f6a499ba2c5579b2c5ba.jpg",
     "static/media/sunnyside.png": "/portfolio_react/static/media/sunnyside.d55b2b2ccca1035d7da1.png",
     "static/media/figma.png": "/portfolio_react/static/media/figma.c2b633da914d1cddc33d.png",
     "static/media/itsme.jpg": "/portfolio_react/static/media/itsme.e3451f3f6736ae3eb854.jpg",
     "static/media/poddinfacerealvector.png": "/portfolio_react/static/media/poddinfacerealvector.6631817a68f6e0ba7f1d.png",
     "index.html": "/portfolio_react/index.html",
-    "main.b33dea2f.css.map": "/portfolio_react/static/css/main.b33dea2f.css.map",
-    "main.196e22bf.js.map": "/portfolio_react/static/js/main.196e22bf.js.map",
-    "787.6e7ececb.chunk.js.map": "/portfolio_react/static/js/787.6e7ececb.chunk.js.map"
+    "main.cdb309ac.css.map": "/portfolio_react/static/css/main.cdb309ac.css.map",
+    "main.7b74b253.js.map": "/portfolio_react/static/js/main.7b74b253.js.map"
   },
   "entrypoints": [
-    "static/css/main.b33dea2f.css",
-    "static/js/main.196e22bf.js"
+    "static/css/main.cdb309ac.css",
+    "static/js/main.7b74b253.js"
   ]
 }
