@@ -1,7 +1,6 @@
 import React from "react";
 import FaceBookImg from "../images/Footer/facebook.png";
 import GitHubImg from "../images/Footer/github.png";
-import HerokuImg from "../images/Footer/heroku.png";
 
 
 
@@ -22,12 +21,6 @@ function Footer(){
           <img src={GitHubImg}
            alt="Github logo"/>
         </a>
-        <a 
-          target="blank" 
-          href="https://peter-daniel-portfolio.herokuapp.com/">
-          <img src={HerokuImg}
-           alt="Heroku logo" />
-        </a>
       </div>
       <div className="contact-info">
         <ul>
@@ -42,8 +35,8 @@ function Footer(){
             </a>
           </li>
           <li>
-            <a href="mailto:Peter.Daniel.Nygaard@Gmail.com">
-              Peter.Daniel.Nygaard@Gmail.com
+            <a href="mailto:peter.daniel.nygaard@gmail.com">
+              peter.daniel.nygaard@gmail.com
             </a>
           </li>
         </ul>

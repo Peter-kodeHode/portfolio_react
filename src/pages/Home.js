@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PoddinFace from "../images/Home/poddinfacerealvector.png";
 import CodeImg from "../images/Home/code.jpg";
-import ChainImg from "../images/Home/chains.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import {
   HOME_GRID_ABOUTME,
@@ -27,6 +26,7 @@ function Home() {
           </p>
           <br />
           <p className="smiley">{HOME_INTRODUCTION_SMILEY}</p>
+          <p>arrow here</p>
         </div>
 
         <div className="box-container">
@@ -43,10 +43,6 @@ function Home() {
           <div className="white-box2">
             <img src={CodeImg} alt="" />
           </div>
-        </div>
-
-        <div className="filler-image">
-          <img src={ChainImg} alt="" />
         </div>
       </AnimatedPage>
     </>

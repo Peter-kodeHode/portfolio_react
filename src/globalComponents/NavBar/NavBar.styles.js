@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
 
 export const StyledNavBar = styled.nav`
-  border: solid var(--primary) 6px;
+  border-bottom: 6px solid var(--primary);
   
   min-width: 100%;
-  max-height: 10em;
+  min-height:15vh;
+  max-height:15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

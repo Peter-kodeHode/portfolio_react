@@ -17,11 +17,13 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: solid var(--primary) 6px;
   border-bottom: none;
+  border-top:none;
   max-width: 100%;
-  max-height: 50%;
+  min-height: 85vh;
+  max-height:85vh;
 }
+/* 85vh for "fullscreen" scroll. Gotta make the navbar follow too. */ 
 
 .introduction p {
   color: var(--primary);
@@ -42,17 +44,21 @@ body {
 }
 
 .smiley:hover {
-  transform: rotate(260deg);
+  transform: rotate(435deg);
 }
 
 .box-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: solid var(--primary) 6px;
+  border-top: solid var(--primary) 6px;
   min-width: 100%;
-  min-height: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  max-height:100vh;
 }
+
+/* 80vh for fullscreen scroll (100??)*/ 
 
 .box-container a {
   width: 100%;
@@ -76,8 +82,8 @@ body {
 }
 
 .box-container img {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
   filter: grayscale(100%);
   border-radius: 50px;
   border: solid var(--primary) 4px;
@@ -146,15 +152,17 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 100%;
-  max-height: 15em;
+  max-height: 10em;
   background: var(--primary);
   text-align: center;
   align-items: center;
   justify-content: center;
+  border-top:var(--secondary) solid 6px;
+
 }
 
 .socials {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 
 .socials img {
@@ -169,7 +177,8 @@ body {
 }
 
 .contact-info {
-  margin: 3.5rem auto 0 auto;
+  margin-top:2rem;
+  margin-bottom:2rem;
 }
 
 .contact-info ul {
@@ -210,7 +219,7 @@ body {
   justify-content: center;
   max-width: 100%;
   border: var(--primary) solid 6px;
-  border-bottom: none;
+  border-top:none;
 }
 
 .projects-border {
