@@ -2,7 +2,6 @@ import React from "react";
 import { useLocation, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./globalComponents/NavBar";
-import Footer from "./globalComponents/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe";
@@ -22,7 +21,6 @@ function App() {
           <Route path="projects" element={<Projects />} />
         </Routes>
       </AnimatePresence>
-      <Footer />
     </div>
   );
 }

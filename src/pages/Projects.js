@@ -2,16 +2,16 @@ import React from "react";
 import BlackJackImg from "../images/Projects/blackjack.png";
 import SunnySideImg from "../images/Projects/sunnyside.png";
 import FigmaImg from "../images/Projects/figma.png";
-import ChainImg from "../images/Projects/chains.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import GitHubImg from "../images/Footer/github.png";
+import Footer from "../globalComponents/Footer"; 
 function Projects() {
   return (
     <>
       <AnimatedPage>
         <div className="projects">
           <h1>PROSJEKTER</h1>
-        </div>
+        
         <div className="github-projects">
           <p className="projects-clickme">Trykk på bildene for mer info</p>
         </div>
@@ -93,12 +93,10 @@ function Projects() {
           </a>
         </div>
 
-        <div className="projects">
+        
           <h1>Mer kommer fortløpende</h1>
         </div>
-        <div className="filler-image">
-          <img src={ChainImg} alt="" />
-        </div>
+         <Footer />
       </AnimatedPage>
     </>
   );

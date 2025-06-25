@@ -1,17 +1,17 @@
 import styled, { css } from "styled-components";
 
 export const StyledNavBar = styled.nav`
-  border-bottom: 6px solid var(--primary);
-  
-  min-width: 100%;
-  min-height:15vh;
-  max-height:15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  position: static;
+  overflow:hidden;
   background-color: var(--secondary);
+  height: 15vh; /* The navbar takes up 15% of the viewport height */
+  border-bottom: solid var(--primary) 6px;
+  position: sticky; /* Makes the navbar stick to the top */
+  top: 0;
+  z-index: 10; /* Ensures it stays on top of other content */
+
   & > a {
     margin: 2em;
     @media (max-width: 500px) {
@@ -40,7 +40,7 @@ const baseIconStyles = css`
 
 export const Logo = styled.img`
   ${baseIconStyles}
-  
+
   
   &:hover {
 
