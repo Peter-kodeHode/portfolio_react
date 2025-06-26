@@ -11,16 +11,17 @@ function Projects() {
       <AnimatedPage>
         <div className="projects">
           <h1>PROSJEKTER</h1>
-        
+         </div>
         <div className="github-projects">
           <p className="projects-clickme">Trykk på bildene for mer info</p>
         </div>
-
-        <span className="projects-border">
+     
+      <div className="projects">
+        
           <div className="dropdown">
-            {/* <a href="https://github.com/Peter-kodeHode/blackjack"> */}
+            <a href="https://github.com/Peter-kodeHode/blackjack">
             <img className="greyimg" src={BlackJackImg} alt="" />
-            {/* </a> */}
+            </a>
             <div className="dropdown-content">
               <p>
                 Dette er et prosjekt som ble påbegynt i Scrimba sitt javascript
@@ -35,14 +36,17 @@ function Projects() {
               </p>
             </div>
           </div>
-        </span>
+        
+        </div>
+      
         <div className="github-projects">
           <p className="projects-clickme">Trykk på meg!</p>
           <a target="blank" href="https://github.com/Peter-kodeHode/blackjack">
             <img src={GitHubImg} alt="Github logo" />
           </a>
-        </div>
-        <span className="projects-border">
+          </div>
+       
+        <div className="projects">
           <div className="dropdown">
             {/* <a href="https://github.com/Peter-kodeHode/sunnsyside"> */}
             <img className="greyimg" src={SunnySideImg} alt="" />
@@ -57,14 +61,15 @@ function Projects() {
               </p>
             </div>
           </div>
-        </span>
+        </div>
+       
         <div className="github-projects">
           <p className="projects-clickme">Trykk på meg!</p>
           <a target="blank" href="https://github.com/Peter-kodeHode/sunnsyside">
             <img src={GitHubImg} alt="Github logo" />
           </a>
         </div>
-        <span className="projects-border">
+        <div className="projects">
           <div className="dropdown">
             {/* <a href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803"> */}
             <img className="greyimg" src={FigmaImg} alt="" />
@@ -82,7 +87,8 @@ function Projects() {
               </p>
             </div>
           </div>
-        </span>
+        </div>
+      
         <div className="github-projects">
           <p className="projects-clickme">Trykk på meg!</p>
           <a
@@ -93,9 +99,10 @@ function Projects() {
           </a>
         </div>
 
-        
+        <div className="projects">
           <h1>Mer kommer fortløpende</h1>
         </div>
+
          <Footer />
       </AnimatedPage>
     </>

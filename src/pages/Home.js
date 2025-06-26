@@ -27,7 +27,7 @@ function Home() {
           </p>
           <br />
           <p className="smiley">{HOME_INTRODUCTION_SMILEY}</p>
-          <p>|<br/>V</p>
+          <p>arrow here</p>
         </div>
 
         <div className="box-container">

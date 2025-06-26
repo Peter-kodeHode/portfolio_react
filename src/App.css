@@ -23,7 +23,10 @@ body {
 
 .introduction,
 .box-container,
-.footer {
+.footer,
+.projects,
+.aboutme
+{
   scroll-snap-align: start;
   height: 100%; 
   width: 100%;
