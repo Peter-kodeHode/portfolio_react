@@ -4,7 +4,7 @@ export const StyledNavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow:hidden;
+  overflow: hidden;
   background-color: var(--secondary);
   height: 15vh; /* The navbar takes up 15% of the viewport height */
   border-bottom: solid var(--primary) 6px;
@@ -41,12 +41,10 @@ const baseIconStyles = css`
 export const Logo = styled.img`
   ${baseIconStyles}
 
-  
   &:hover {
-
-    transform:  rotate(540deg);
+    transform: rotate(540deg);
     transition: all 1000ms ease-in-out;
-    
+
     @media (max-width: 500px) {
       transform: none;
       rotate: none;
@@ -69,7 +67,7 @@ export const Home = styled.img`
   ${baseIconStyles}
 
   &:hover {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
     transition: all 200ms ease;
     @media (max-width: 500px) {
       transform: none;

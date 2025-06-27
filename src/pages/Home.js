@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import PoddinFace from "../images/Home/poddinfacerealvector.png";
 import CodeImg from "../images/Home/code.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
-import Footer from "../globalComponents/Footer"; 
+import Footer from "../globalComponents/Footer";
+import arrowdown from "../images/Home/arrow-down.svg";
 import {
   HOME_GRID_ABOUTME,
   HOME_GRID_PROJECTS,
@@ -18,6 +19,7 @@ function Home() {
     <>
       <AnimatedPage>
         <div className="introduction">
+
           <p>
             {HOME_INTRODUCTION_TEXT1}
             <br />
@@ -27,15 +29,19 @@ function Home() {
           </p>
           <br />
           <p className="smiley">{HOME_INTRODUCTION_SMILEY}</p>
-          <p>arrow here</p>
+            <img className="arrow-down" src={arrowdown} alt="arrow down" />
         </div>
+        
 
         <div className="box-container">
           <div className="black-box1">
             <Link to="/aboutme">{HOME_GRID_ABOUTME}</Link>
           </div>
           <div className="white-box1">
-            <img src={PoddinFace} alt="a black and white portrait of portfolio owner" />
+            <img
+              src={PoddinFace}
+              alt="a black and white portrait of portfolio owner"
+            />
           </div>
 
           <div className="black-box2">

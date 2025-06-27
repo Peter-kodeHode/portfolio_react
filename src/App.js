@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "./App-mobile.css";
 import NavBar from "./globalComponents/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";

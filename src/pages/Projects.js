@@ -1,26 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BlackJackImg from "../images/Projects/blackjack.png";
 import SunnySideImg from "../images/Projects/sunnyside.png";
 import FigmaImg from "../images/Projects/figma.png";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import GitHubImg from "../images/Footer/github.png";
-import Footer from "../globalComponents/Footer"; 
+import Footer from "../globalComponents/Footer";
+import arrowdown from "../images/Home/arrow-down.svg";
+
 function Projects() {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown')) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
     <>
       <AnimatedPage>
         <div className="projects">
           <h1>PROSJEKTER</h1>
-         </div>
-        <div className="github-projects">
-          <p className="projects-clickme">Trykk på bildene for mer info</p>
+          <img className="arrow-down" src={arrowdown} alt="arrow down" />
         </div>
-     
-      <div className="projects">
-        
-          <div className="dropdown">
+
+        <div className="projects">
+          <div className={`dropdown ${activeDropdown === 0 ? 'active' : ''}`}>
             <a href="https://github.com/Peter-kodeHode/blackjack">
-            <img className="greyimg" src={BlackJackImg} alt="" />
+              <img 
+                className="greyimg" 
+                src={BlackJackImg} 
+                alt="" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleDropdown(0);
+                }}
+              />
             </a>
             <div className="dropdown-content">
               <p>
@@ -36,20 +61,17 @@ function Projects() {
               </p>
             </div>
           </div>
-        
         </div>
-      
-        <div className="github-projects">
-          <p className="projects-clickme">Trykk på meg!</p>
-          <a target="blank" href="https://github.com/Peter-kodeHode/blackjack">
-            <img src={GitHubImg} alt="Github logo" />
-          </a>
-          </div>
-       
+
         <div className="projects">
-          <div className="dropdown">
+          <div className={`dropdown ${activeDropdown === 1 ? 'active' : ''}`}>
             {/* <a href="https://github.com/Peter-kodeHode/sunnsyside"> */}
-            <img className="greyimg" src={SunnySideImg} alt="" />
+            <img 
+              className="greyimg" 
+              src={SunnySideImg} 
+              alt="" 
+              onClick={() => toggleDropdown(1)}
+            />
             {/* </a> */}
             <div className="dropdown-content">
               <p>
@@ -61,18 +83,18 @@ function Projects() {
               </p>
             </div>
           </div>
+
         </div>
-       
-        <div className="github-projects">
-          <p className="projects-clickme">Trykk på meg!</p>
-          <a target="blank" href="https://github.com/Peter-kodeHode/sunnsyside">
-            <img src={GitHubImg} alt="Github logo" />
-          </a>
-        </div>
+
         <div className="projects">
-          <div className="dropdown">
+          <div className={`dropdown ${activeDropdown === 2 ? 'active' : ''}`}>
             {/* <a href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803"> */}
-            <img className="greyimg" src={FigmaImg} alt="" />
+            <img 
+              className="greyimg" 
+              src={FigmaImg} 
+              alt="" 
+              onClick={() => toggleDropdown(2)}
+            />
             {/* </a> */}
             <div className="dropdown-content">
               <p>
@@ -87,23 +109,13 @@ function Projects() {
               </p>
             </div>
           </div>
-        </div>
-      
-        <div className="github-projects">
-          <p className="projects-clickme">Trykk på meg!</p>
-          <a
-            target="blank"
-            href="https://www.figma.com/file/YxP9F77XoQsf9VuACRodSg/OFL-prosjekt---Anders%2C-Peter-og-Joar?node-id=704%3A803>"
-          >
-            <img src={GitHubImg} alt="Github logo" />
-          </a>
-        </div>
 
+        </div>
         <div className="projects">
           <h1>Mer kommer fortløpende</h1>
         </div>
 
-         <Footer />
+        <Footer />
       </AnimatedPage>
     </>
   );
