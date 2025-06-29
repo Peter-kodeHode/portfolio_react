@@ -403,8 +403,8 @@ body {
   position: absolute;
   top: 2em;
   right:3em;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
+  background: var(--primary);
+  color: var(--secondary);
   padding: 8px 10px;
   border-radius: 50%;
   font-size: 1.6em;
@@ -442,8 +442,8 @@ body {
   font-size: 1.2rem;
   text-decoration: none;
   display: inline-block;
-
   margin-bottom: 2rem;
+  animation : gentleBounce 2s infinite;
 }
 
 .github-img {
