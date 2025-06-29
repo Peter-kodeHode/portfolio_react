@@ -8,19 +8,20 @@ function Footer() {
       <div className="footer">
         <div className="socials">
           <a
-            target="blank"
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://www.facebook.com/peter.daniel.nygaard/"
           >
             <img src={FaceBookImg} alt="Facebook logo" />
           </a>
-          <a target="blank" href="https://github.com/Peter-kodeHode">
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/Peter-kodeHode">
             <img src={GitHubImg} alt="Github logo" />
           </a>
         </div>
         <div className="contact-info">
           <ul>
             <li>
-              <a href="https://www.facebook.com/peter.daniel.nygaard/">
+              <a href="https://www.facebook.com/peter.daniel.nygaard/" target="_blank" rel="noopener noreferrer">
                 Peter Daniel Nygaard
               </a>
             </li>

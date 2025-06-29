@@ -73,7 +73,8 @@ body {
 .arrow-down {
   width: 4rem;
   height: 4rem;
-  margin-top: 8rem;
+  margin-top: 2rem;
+  color: var(--primary);
   transition: transform 500ms ease-in-out;
   animation: bounce 1.5s infinite;
 }
@@ -95,11 +96,24 @@ body {
   }
 }
 
+@keyframes simpleUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseBounce {
+  0%, 100% { 
+    transform: translateY(0) scale(1); 
+  }
+  50% { 
+    transform: translateY(-8px) scale(1.1); 
+  }
+}
+
 .box-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-
   border-bottom: solid var(--secondary) 6px;
   min-width: 100%;
   max-width: 100%;
@@ -243,7 +257,6 @@ body {
   justify-content: center;
   max-width: 100%;
   min-width: 100%;
-  border-bottom: double var(--primary) 12px;
 }
 
 .projects {
@@ -253,7 +266,6 @@ body {
   justify-content: center;
   max-width: 100%;
   min-width: 100%;
-  border-bottom: double var(--primary) 12px;
 }
 
 .projects-clickme {
@@ -265,7 +277,7 @@ body {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   transition: all 500ms ease-out;
-  max-width: 25vw;
+  max-width: 20vw;
   border: 6px var(--primary) solid;
 }
 
@@ -273,8 +285,7 @@ body {
   filter: none;
   -webkit-filter: grayscale(0);
   transition: all 500ms ease-in;
-  max-height: 200px;
-  border-radius: 25%;
+
 }
 
 .aboutme h1 {
@@ -282,7 +293,6 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 4rem;
-  font-style: italic;
   text-align: center;
   margin: 3rem;
   transition: text-decoration 400ms;
@@ -293,7 +303,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 4rem;
-  font-style: italic;
+
   text-align: center;
   margin: 3rem;
   transition: text-decoration 400ms;
@@ -310,7 +320,6 @@ body {
   text-align: center;
   margin: 2rem 0 0 0;
   line-height: 2rem;
-  border: var(--primary) 2px solid;
   padding: 5rem;
   min-width: 75vw;
   max-width: 50vw;
@@ -322,10 +331,9 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem;
   line-height: 2.5rem;
-  border: var(--primary) 2px solid;
-  padding: 1rem;
+ 
 }
 
 .dropdown {
@@ -353,14 +361,14 @@ body {
   overflow: hidden;
 }
 
-.github-projects {
-  visibility: hidden;
-}
+
 
 .dropdown-content p {
   opacity: 0;
   transition: all 1s ease-in;
 }
+
+
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -379,19 +387,69 @@ body {
   border-radius: 4em;
   max-width: 75vw;
   height: auto;
-  border:6px solid var(--primary);
+  border: 6px solid var(--primary);
+  cursor: pointer;
 }
 
-.greyimg:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-}
-
-/* Keep image colored when dropdown is active */
-.dropdown.active .greyimg,
+.greyimg:hover,
 .dropdown:hover .greyimg {
   filter: none;
   -webkit-filter: grayscale(0);
 }
 
+
+.dropdown::after {
+  content: "▼";
+  position: absolute;
+  top: 2em;
+  right:3em;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 50%;
+  font-size: 1.6em;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+  animation: gentleBounce 2s ease-in-out infinite;
+}
+
+.dropdown:hover::after {
+  opacity: 0.2;
+  animation: none; /* Stop animation on hover */
+}
+
+/* Hide hint when dropdown is active */
+.dropdown.active::after {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes gentleBounce {
+  0%, 80%, 100% { 
+    transform: translateY(0); 
+  }
+  40% { 
+    transform: translateY(-4px); 
+  }
+}
+
+.github-link {
+  color: var(--secondary);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+
+  margin-bottom: 2rem;
+}
+
+.github-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
 
