@@ -9,6 +9,9 @@
 }
 
 @media (max-width: 500px) {
+  .App > div {
+  height: 85dvh;
+}
   .introduction :first-child {
     font-size: 1.5rem;
     
@@ -116,8 +119,8 @@
   right: 1em;
 }
   .greyimg {
-    width: 90vw;
-    height: 65vh;
+    width: 100dvw;
+    height: 50dvh;
   }
 
   .github-img {
