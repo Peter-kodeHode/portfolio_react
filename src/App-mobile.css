@@ -13,15 +13,14 @@
   height: 85dvh;
 }
   .introduction :first-child {
-    font-size: 1.5rem;
-    
+    font-size: 2rem;
+    margin: 0 2rem 0 2rem;
   }
   .smiley {
     font-size: 2rem;
     transition: transform 500ms ease-in-out;
   }
   .smiley:active {
-    
     transform: rotate(260deg);
     transition: transform 1ms;
   }
@@ -44,16 +43,13 @@
   }
   .white-box1 img {
     object-fit: contain;
-    height: 75%;
-    width: 75%;
+    height: 65%;
+    width: 65%;
   }
   .white-box2 img {
     object-fit: fill;
-    height: 75%;
-    width: 75%;
-  }
-  .filler-image img {
-    height: 6em;
+    height: 65%;
+    width: 65%;
   }
   .contact-info ul {
     flex-wrap: wrap;
