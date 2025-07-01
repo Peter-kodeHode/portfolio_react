@@ -10,6 +10,7 @@ const IndicatorContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   z-index: 100;
+  pointer-events: none; /* This prevents the container from intercepting scroll events */
   
   @media (max-width: 500px) {
     top: 11.5dvh;
@@ -24,6 +25,7 @@ const Dot = styled.div`
   transition: all 300ms ease;
   border: 2px solid var(--secondary);
   cursor: pointer;
+  pointer-events: auto; /* Re-enable pointer events for the dots themselves */
   
   &:hover {
     transform: scale(1.2);

@@ -10,7 +10,7 @@
 
 @media (max-width: 500px) {
   .App > div {
-    height: 85vh;
+    height: 85dvh;
   }
   
   .home-page,
