@@ -6,7 +6,7 @@ import NavBar from "./globalComponents/NavBar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import GlobalStyle from "./globalComponents/globalStyles";
 import usePageNavigation from "./hooks/usePageNavigation";
 import PageIndicator from "./globalComponents/PageIndicator";
@@ -21,14 +21,12 @@ function App() {
       <PageIndicator />
       <NavBar />
       
-      <AnimatePresence exitBeforeEnter>
-        <div key={location.pathname}>
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="aboutme" element={<AboutMe />} />
-            <Route path="projects" element={<Projects />} />
-          </Routes>
-        </div>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutme" element={<AboutMe />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </AnimatePresence>
     </div>
   );

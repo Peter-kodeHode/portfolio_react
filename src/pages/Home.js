@@ -4,7 +4,7 @@ import PoddinFace from "../images/Home/poddinfacerealvector.png";
 import CodeImg from "../images/Home/code.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import Footer from "../globalComponents/Footer";
-import arrowdown from "../images/Home/arrow-down.svg";
+import HideArrowDown from "../globalComponents/HideArrowDown";
 import {
   HOME_GRID_ABOUTME,
   HOME_GRID_PROJECTS,
@@ -38,7 +38,7 @@ function Home() {
             </p>
             <br />
             <p className="smiley">{HOME_INTRODUCTION_SMILEY}</p>
-            <img className="arrow-down" src={arrowdown} alt="arrow down" />
+            <HideArrowDown containerRef={homePageRef} />
           </div>
 
           <div className="box-container">

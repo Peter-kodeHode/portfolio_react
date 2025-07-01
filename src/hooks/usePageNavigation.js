@@ -27,6 +27,9 @@ const usePageNavigation = () => {
     let isScrolling = false;
 
     const handleWheel = (e) => {
+      // Add check to ensure we're still mounted
+      if (!document.body) return;
+      
       // Check if it's a horizontal scroll (deltaX) or shift+scroll
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
         e.preventDefault();
@@ -46,7 +49,7 @@ const usePageNavigation = () => {
           clearTimeout(scrollTimeout);
           scrollTimeout = setTimeout(() => {
             isScrolling = false;
-          }, 800);
+          }, 200);
         }
       }
     };
@@ -56,6 +59,7 @@ const usePageNavigation = () => {
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
+    let isTouchScrolling = false;
 
     const handleTouchStart = (e) => {
       touchStartX = e.changedTouches[0].screenX;
@@ -63,6 +67,8 @@ const usePageNavigation = () => {
     };
 
     const handleTouchEnd = (e) => {
+      if (isTouchScrolling) return; // Prevent if already processing a touch
+      
       touchEndX = e.changedTouches[0].screenX;
       touchEndY = e.changedTouches[0].screenY;
       
@@ -71,11 +77,18 @@ const usePageNavigation = () => {
       
       // Only trigger if horizontal swipe is dominant and sufficient distance
       if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        isTouchScrolling = true;
+        
         if (deltaX > 0) {
           goToPrevPage(); // Swipe right = previous page
         } else {
           goToNextPage(); // Swipe left = next page
         }
+        
+        // Reset touch scrolling flag
+        setTimeout(() => {
+          isTouchScrolling = false;
+        }, 300);
       }
     };
 
@@ -104,12 +117,17 @@ const usePageNavigation = () => {
     document.addEventListener('touchstart', handleTouchStart, { passive: true });
     document.addEventListener('touchend', handleTouchEnd, { passive: true });
     
+    // More defensive cleanup
     return () => {
-      document.removeEventListener('wheel', handleWheel);
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchend', handleTouchEnd);
-      document.removeEventListener('keydown', handleKeyDown, false);
-      clearTimeout(scrollTimeout);
+      if (document) {
+        document.removeEventListener('wheel', handleWheel);
+        document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchend', handleTouchEnd);
+        document.removeEventListener('keydown', handleKeyDown, false);
+      }
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
     };
   }, [goToNextPage, goToPrevPage]);
 

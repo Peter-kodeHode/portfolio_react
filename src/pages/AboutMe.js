@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import MyFace from "../images/AboutMe/itsme.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import Footer from "../globalComponents/Footer";
-import arrowdown from "../images/Home/arrow-down.svg";
+import HideArrowDown from "../globalComponents/HideArrowDown";
 import {
   ABOUT_ME_INTRODUCTION,
   ABOUT_ME_PARAGRAPH1_PART1,
@@ -30,7 +30,7 @@ function AboutMe() {
         <div className="aboutme-page" tabIndex="0" ref={pageRef}>
           <div className="aboutme">
             <h1>{ABOUT_ME_INTRODUCTION}</h1>
-            <img className="arrow-down" src={arrowdown} alt="arrow down" />
+            <HideArrowDown containerRef={pageRef} />
           </div>
           
           <div className="aboutme">

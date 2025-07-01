@@ -5,7 +5,7 @@ import FigmaImg from "../images/Projects/figma.png";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import GitHubImg from "../images/Footer/github.png";
 import Footer from "../globalComponents/Footer";
-import arrowdown from "../images/Home/arrow-down.svg";
+import HideArrowDown from "../globalComponents/HideArrowDown";
 import {
   PROJECTS_INTRODUCTION,
   PROJECT_BLACKJACK_DESCRIPTION,
@@ -35,7 +35,7 @@ function Projects() {
         <div className="projects-page" tabIndex="0" ref={pageRef}>
           <div className="projects">
             <h1>{PROJECTS_INTRODUCTION}</h1>
-            <img className="arrow-down" src={arrowdown} alt="arrow down" />
+            <HideArrowDown containerRef={pageRef} />
           </div>
 
           <div className="projects">

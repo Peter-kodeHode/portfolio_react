@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap");
-@import "./App-mobile.css";
 
 
 .App {
@@ -9,52 +8,21 @@
 
 .App > div {
   height: 85vh;
-  overflow-y: visible; /* Change from auto to visible */
   scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  /* Remove scroll-snap-type from here */
 }
 
-/* Apply scroll-snap AND overflow to the same element */
-.home-page {
-  scroll-snap-type: y mandatory;
-  height: 85vh;
-  overflow-y: auto; /* Move the actual scrolling here */
-  scroll-behavior: smooth;
-}
-
-/* Apply scroll-snap AND overflow to AboutMe page too */
-.aboutme-page {
-  scroll-snap-type: y mandatory;
-  height: 85vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-/* Apply scroll-snap AND overflow to Projects page too */
+.home-page,
+.aboutme-page,
 .projects-page {
+  height: 85vh;
   scroll-snap-type: y mandatory;
-  height: 85vh;
   overflow-y: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
-}
-
-.introduction,
-.box-container,
-.footer {
-  scroll-snap-align: start;
-  height: 85vh;
-  width: 100%;
-  scroll-snap-stop: always;
-}
-
-/* Keep other pages as single sections without scroll-snap */
-.projects,
-.aboutme {
-  height: 85vh;
-  width: 100%;
-  overflow-y: auto; /* Add scrolling to other pages too */
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .App * {
@@ -62,26 +30,31 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .aboutme p,
 .projects p,
 .contact-info,
 input,
-textarea,
-.App > div {
+textarea {
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
+  -webkit-touch-callout: default;
 }
 
-.App > div {
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.home-page,
+.aboutme-page,
+.projects-page,
+.introduction,
+.box-container,
+.footer,
+.projects,
+.aboutme {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .introduction,
@@ -90,9 +63,10 @@ textarea,
 .projects,
 .aboutme {
   scroll-snap-align: start;
-  height: 85vh; /* Keep content at 85vh, now taller than 80vh container */
+  height: 85vh; 
   width: 100%;
   scroll-snap-stop: always;
+  overflow-y: auto;
 }
 
 .introduction {
@@ -135,8 +109,15 @@ textarea,
   left: 50%; 
   transform: translateX(-50%);
   color: var(--primary);
-  transition: transform 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
   animation: bounce 1.5s infinite;
+  opacity: 1;
+}
+
+.arrow-down.hidden {
+  transition: linear 150ms all;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @keyframes bounce {
@@ -346,7 +327,8 @@ textarea,
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   transition: all 500ms ease-out;
-  max-width: 20vw;
+  max-width: 25vw;
+  max-height:50vh;
   border: 6px var(--primary) solid;
 }
 
@@ -366,12 +348,12 @@ textarea,
   transition: text-decoration 400ms;
   max-width: 100%;
 }
+
 .projects h1 {
   color: var(--primary);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 4rem;
-
   text-align: center;
   margin: 3rem;
   transition: text-decoration 400ms;
@@ -477,10 +459,9 @@ textarea,
 
 .dropdown:hover::after {
   opacity: 0.2;
-  animation: none; /* Stop animation on hover */
+  animation: none;
 }
 
-/* Hide hint when dropdown is active */
 .dropdown.active::after {
   opacity: 0;
   animation: none;
