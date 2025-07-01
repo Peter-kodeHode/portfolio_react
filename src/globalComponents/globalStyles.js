@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
     background-color: var(--secondary);
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     min-width: 100%;
 }

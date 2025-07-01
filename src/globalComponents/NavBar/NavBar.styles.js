@@ -6,18 +6,21 @@ export const StyledNavBar = styled.nav`
   align-items: center;
   overflow: hidden;
   background-color: var(--secondary);
-  height: 15vh; /* The navbar takes up 15% of the viewport height */
+  height: 15vh; 
   border-bottom: solid var(--primary) 6px;
-  position: sticky; /* Makes the navbar stick to the top */
+  position: sticky; 
   top: 0;
-  z-index: 10; /* Ensures it stays on top of other content */
-
-  & > a {
+  z-index: 10; 
+   & > a {
     margin: 2em;
-    @media (max-width: 500px) {
+  }
+  @media (max-width: 500px) {
+    height: 15dvh;
+    & > a {
       margin: 1em;
     }
   }
+ 
 `;
 
 // Create a base style for all icons
