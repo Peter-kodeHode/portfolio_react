@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap");
-
+@import url('./App-mobile.css');
 
 .App {
   touch-action: pan-y pinch-zoom;
@@ -94,7 +94,7 @@ textarea {
   font-size: 3rem;
   text-align: center;
   transform: rotate(75deg);
-  transition: transform 500ms;
+  transition: transform 500ms ease-in-out;
 }
 
 .smiley:hover {
@@ -161,8 +161,8 @@ textarea {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   border-bottom: solid var(--secondary) 6px;
-  min-width: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .box-container a {
@@ -376,7 +376,9 @@ textarea {
 }
 
 .dropdown-content {
-  display: none;
+  /* Change from display: none to visibility + opacity for smooth transitions */
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   background-color: var(--primary);
   color: var(--secondary);
@@ -386,9 +388,12 @@ textarea {
   z-index: 1;
   text-align: center;
   border-radius: 25px;
-  transition: all 400ms ease-in-out;
+  /* Enhanced transition for smooth animation */
+  transition: all 400ms ease-in-out, visibility 0ms linear 400ms;
   overflow: hidden;
   pointer-events: none;
+  /* Add transform for smoother animation */
+  transform: translateY(-10px) scale(0.95);
 }
 
 .dropdown-content p {
@@ -399,17 +404,24 @@ textarea {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   margin: 2rem;
-  transition: opacity 400ms ease-in-out 200ms;
+  transition: opacity 600ms ease-in-out 200ms;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  /* Use visibility and opacity instead of display */
+  visibility: visible;
+  opacity: 1;
   pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition: all 400ms ease-in-out, visibility 0ms linear 0ms;
 }
 
 .dropdown.active .dropdown-content {
-  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+  transition: all 400ms ease-in-out, visibility 0ms linear 0ms !important;
 }
 
 .dropdown:hover .dropdown-content p,
@@ -425,7 +437,6 @@ textarea {
   max-width: 80vw;
   height: auto;
   border: 6px solid var(--primary);
-  cursor: pointer;
   position: relative;
   z-index: 0;
 }
@@ -440,13 +451,13 @@ textarea {
 .dropdown::after {
   content: "▼";
   position: absolute;
-  top: 1em;
-  right: 3em;
+  top: 2vh;
+  right: 6vw;
   background: var(--primary);
   color: var(--secondary);
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-radius: 50%;
-  font-size: 2em;
+  font-size: 42px;
   opacity: 0.7;
   transition: opacity 600ms ease-in-out;
   pointer-events: none;

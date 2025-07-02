@@ -35,7 +35,6 @@
   }
   .smiley {
     font-size: 8dvw;
-    transition: transform 500ms ease-in-out;
   }
   .smiley:active {
     transform: rotate(75deg);
@@ -44,19 +43,10 @@
   .arrow-down {
     width: 14vw;
     height: 14dvh;
-    position: absolute;
     bottom: 3vh;
-    left: 50%; 
-    transform: translateX(-50%); 
-    color: var(--primary);
-    transition: transform 500ms ease-in-out;
-    animation: bounce 1.5s infinite;
   }
 
-  .box-container {
-    height: 100%;
-    width: 100%;
-  }
+
   .box-container a {
     font-size: 8dvw;
   }
@@ -90,6 +80,7 @@
     font-size: 4vw;
     line-height: 1.2rem;
     max-width: 80vw;
+    
   }
 
   .dropdown.active .dropdown-content {
@@ -97,13 +88,13 @@
     max-height: 75dvh !important;
   }
 
-  .dropdown.active .dropdown-content p {
-    opacity: 1 !important;
-  }
+
 
   .dropdown::after {
-    top: 1em;
-    right: 1em;
+    top: 30px;
+    right: 40px;
+    font-size:25px;
+    padding: 4px 6px;
   }
   
   .greyimg {
@@ -118,6 +109,7 @@
   }
   .github-link {
     font-size: 1rem;
+    margin: 0 0 1rem 0;
   }
 
   .aboutme p {
