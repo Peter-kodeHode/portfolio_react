@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio_react/static/css/main.5d5674a2.css",
-    "main.js": "/portfolio_react/static/js/main.3cb15bc4.js",
+    "main.js": "/portfolio_react/static/js/main.d644e45a.js",
     "static/media/blackjack.png": "/portfolio_react/static/media/blackjack.e800578051526526771d.png",
     "static/media/code.jpg": "/portfolio_react/static/media/code.7ee9666e1779a3a67d8a.jpg",
     "static/media/sunnyside.png": "/portfolio_react/static/media/sunnyside.d55b2b2ccca1035d7da1.png",
@@ -11,10 +11,10 @@
     "index.html": "/portfolio_react/index.html",
     "static/media/arrow-down.svg": "/portfolio_react/static/media/arrow-down.1eca03ef4a23db15831de9ee21016747.svg",
     "main.5d5674a2.css.map": "/portfolio_react/static/css/main.5d5674a2.css.map",
-    "main.3cb15bc4.js.map": "/portfolio_react/static/js/main.3cb15bc4.js.map"
+    "main.d644e45a.js.map": "/portfolio_react/static/js/main.d644e45a.js.map"
   },
   "entrypoints": [
     "static/css/main.5d5674a2.css",
-    "static/js/main.3cb15bc4.js"
+    "static/js/main.d644e45a.js"
   ]
 }
