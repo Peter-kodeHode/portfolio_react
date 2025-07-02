@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-// Conditionally set basename based on environment
+// Only use basename in production (GitHub Pages)
 const basename = process.env.NODE_ENV === 'production' ? '/portfolio_react' : '';
 
 root.render(
