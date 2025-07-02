@@ -10,23 +10,28 @@ export const StyledNavBar = styled.nav`
   border-bottom: solid var(--primary) 6px;
   position: sticky; 
   top: 0;
-  z-index: 10; 
-   & > a {
+  z-index: 10;
+  pointer-events: none; /* This allows wheel and touch events to pass through */
+   
+  & > a {
     margin: 2em;
+    pointer-events: auto; /* Re-enable for navigation links */
   }
+  
   @media (max-width: 500px) {
     height: 15dvh;
     & > a {
       margin: 1em;
     }
   }
- 
 `;
 
 // Create a base style for all icons
 const baseIconStyles = css`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   transition: all 500ms ease-in-out;
+  pointer-events: auto; /* Ensure icons are clickable */
+  
   @media (max-width: 500px) {
     width: 3em;
   }

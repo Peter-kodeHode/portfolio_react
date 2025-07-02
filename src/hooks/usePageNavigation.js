@@ -51,32 +51,55 @@ const usePageNavigation = () => {
             isScrolling = false;
           }, 200);
         }
+      } else {
+        // For vertical scrolling - manually forward the scroll to the page content
+        const currentPage = document.querySelector('.home-page, .aboutme-page, .projects-page');
+        if (currentPage && !isScrolling) {
+          // Prevent default to stop the document from scrolling
+          e.preventDefault();
+          
+          // Manually scroll the page container
+          const scrollAmount = e.deltaY;
+          currentPage.scrollBy({ 
+            top: scrollAmount, 
+            behavior: 'auto' // Use 'auto' instead of 'smooth' for immediate response
+          });
+        }
       }
     };
 
-    // Handle touch events for mobile swipe
+    // Handle touch events for mobile swipe - SIMPLIFIED VERSION
     let touchStartX = 0;
     let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
     let isTouchScrolling = false;
+    let touchMoved = false;
 
     const handleTouchStart = (e) => {
       touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
+      touchMoved = false;
+    };
+
+    const handleTouchMove = (e) => {
+      touchMoved = true;
+      // Don't interfere with vertical scrolling at all
+      // Let the browser handle it naturally
     };
 
     const handleTouchEnd = (e) => {
-      if (isTouchScrolling) return; // Prevent if already processing a touch
+      if (isTouchScrolling || !touchMoved) return;
       
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
       
       const deltaX = touchEndX - touchStartX;
       const deltaY = touchEndY - touchStartY;
       
-      // Only trigger if horizontal swipe is dominant and sufficient distance
-      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      // Only trigger page navigation if horizontal swipe is CLEARLY dominant
+      const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) * 1.5; // More strict ratio
+      const isSignificantSwipe = Math.abs(deltaX) > 80; // Increased threshold
+      
+      if (isHorizontalSwipe && isSignificantSwipe) {
         isTouchScrolling = true;
         
         if (deltaX > 0) {
@@ -88,17 +111,17 @@ const usePageNavigation = () => {
         // Reset touch scrolling flag
         setTimeout(() => {
           isTouchScrolling = false;
-        }, 300);
+        }, 500); // Longer timeout
       }
     };
 
-    // Handle keyboard navigation - ONLY horizontal arrows and ONLY when not focused on scrollable content
+    // Handle keyboard navigation
     const handleKeyDown = (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
         return;
       }
 
-      // Only handle our specific horizontal navigation keys
+      // Horizontal navigation keys
       if (e.key === 'ArrowLeft' || e.key === 'a') {
         e.preventDefault();
         goToPrevPage();
@@ -107,21 +130,43 @@ const usePageNavigation = () => {
         e.preventDefault();
         goToNextPage();
       }
-      // Let ALL other keys (including ArrowUp, ArrowDown, PageUp, PageDown, Space) pass through normally
+      // Vertical scroll keys - intercept arrow keys and give them smooth behavior
+      else if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'w' || e.key === 'W') {
+        e.preventDefault(); // Prevent default for arrow keys too
+        // Scroll up - find the current scrollable container and scroll it
+        const scrollableElement = document.querySelector('.home-page, .aboutme-page, .projects-page');
+        if (scrollableElement) {
+          scrollableElement.scrollBy({ top: -100, behavior: 'smooth' });
+        }
+      }
+      else if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 's' || e.key === 'S') {
+        e.preventDefault(); // Prevent default for arrow keys too
+        // Scroll down - find the current scrollable container and scroll it
+        const scrollableElement = document.querySelector('.home-page, .aboutme-page, .projects-page');
+        if (scrollableElement) {
+          scrollableElement.scrollBy({ top: 100, behavior: 'smooth' });
+        }
+      }
+      // Let other keys (PageUp, PageDown, Space, Home, End) pass through normally
     };
 
-    // Attach to document but DON'T use capture phase so the scroll container gets the events first
+    // Attach keyboard without capture
     document.addEventListener('keydown', handleKeyDown, false);
-
-    document.addEventListener('wheel', handleWheel, { passive: false });
+    
+    // Use capture for wheel (desktop only)
+    document.addEventListener('wheel', handleWheel, { passive: false, capture: true });
+    
+    // DON'T use capture for touch events - let them bubble naturally
     document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: true });
     document.addEventListener('touchend', handleTouchEnd, { passive: true });
     
     // More defensive cleanup
     return () => {
       if (document) {
-        document.removeEventListener('wheel', handleWheel);
+        document.removeEventListener('wheel', handleWheel, true);
         document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchmove', handleTouchMove);
         document.removeEventListener('touchend', handleTouchEnd);
         document.removeEventListener('keydown', handleKeyDown, false);
       }
