@@ -8,7 +8,6 @@
 
 .App > div {
   height: 85vh;
-  scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -17,12 +16,50 @@
 .aboutme-page,
 .projects-page {
   height: 85vh;
-  scroll-snap-type: y mandatory;
   overflow-y: auto;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  /* Remove scroll behavior for desktop */
+  scroll-behavior: auto;
+}
+
+.introduction,
+.box-container,
+.footer,
+.projects,
+.aboutme {
+  height: 85vh; 
+  width: 100%;
+  overflow-y: auto;
+  /* Remove scroll-snap properties for desktop */
+}
+
+/* Keep smooth scrolling and snap ONLY for mobile */
+@media (max-width: 500px) {
+  .App > div {
+    height: 85dvh;
+    scroll-behavior: smooth;
+  }
+  
+  .home-page,
+  .aboutme-page,
+  .projects-page {
+    height: 85dvh;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .introduction,
+  .box-container,
+  .footer,
+  .projects,
+  .aboutme {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
 
 .App * {
@@ -236,6 +273,7 @@ textarea {
 
 .footer {
   display: flex;
+  
   flex-direction: column;
   min-width: 100%;
   max-height: 10em;

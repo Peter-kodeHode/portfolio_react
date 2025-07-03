@@ -25,9 +25,57 @@ const usePageNavigation = () => {
     return document.querySelector('.home-page, .aboutme-page, .projects-page');
   }, []);
 
+  // Custom scroll snap implementation - only for desktop
+  const customScrollSnap = useCallback((container, direction) => {
+    if (window.innerWidth <= 500) return; // Don't interfere with mobile CSS scroll
+    
+    const sectionHeight = window.innerHeight * 0.85;
+    const currentScroll = container.scrollTop;
+    const currentSection = Math.round(currentScroll / sectionHeight);
+    
+    let targetSection;
+    if (direction > 0) {
+      targetSection = currentSection + 1;
+    } else {
+      targetSection = currentSection - 1;
+    }
+    
+    // Get all sections in the current page
+    const sections = container.querySelectorAll('.introduction, .box-container, .footer, .projects, .aboutme');
+    const maxSection = sections.length - 1;
+    
+    // Clamp target section to valid range
+    targetSection = Math.max(0, Math.min(maxSection, targetSection));
+    
+    const targetScroll = targetSection * sectionHeight;
+    
+    // Smooth scroll to target with requestAnimationFrame - slightly smoother
+    const startScroll = container.scrollTop;
+    const distance = targetScroll - startScroll;
+    const duration = 400; // Increased from 300ms for smoother feel
+    const startTime = performance.now();
+
+    const animateScroll = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Smoother easing function
+      const easeInOutQuad = progress < 0.5 
+        ? 2 * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      
+      container.scrollTop = startScroll + (distance * easeInOutQuad);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+    
+    requestAnimationFrame(animateScroll);
+  }, []);
+
   // Handle all navigation events
   useEffect(() => {
-    let scrollTimeout;
     let isScrolling = false;
 
     const handleWheel = (e) => {
@@ -36,39 +84,36 @@ const usePageNavigation = () => {
       // Check if it's horizontal scroll (deltaX) or shift+scroll for page navigation
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
         e.preventDefault();
+        const scrollDirection = e.shiftKey ? e.deltaY : e.deltaX;
+        
+        if (scrollDirection > 0) {
+          goToNextPage();
+        } else {
+          goToPrevPage();
+        }
+      } else if (window.innerWidth > 500) {
+        // Desktop: Use custom scroll snap
+        e.preventDefault();
         
         if (!isScrolling) {
           isScrolling = true;
-          const scrollDirection = e.shiftKey ? e.deltaY : e.deltaX;
-          
-          if (scrollDirection > 0) {
-            goToNextPage();
-          } else {
-            goToPrevPage();
+          const currentPage = getCurrentScrollableElement();
+          if (currentPage) {
+            customScrollSnap(currentPage, e.deltaY);
           }
           
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
+          // Reset scrolling flag after a short delay
+          setTimeout(() => {
             isScrolling = false;
-          }, 50);
-        }
-      } else {
-        // Vertical scrolling - forward to current page container
-        const currentPage = getCurrentScrollableElement();
-        if (currentPage && !isScrolling) {
-          e.preventDefault();
-          currentPage.scrollBy({ 
-            top: e.deltaY, 
-            behavior: 'smooth'
-          });
+          }, 300);
         }
       }
+      // Mobile: Let CSS handle scrolling naturally (don't preventDefault)
     };
 
     // Touch events for mobile swipe navigation
     let touchStartX = 0;
     let touchStartY = 0;
-    let isTouchScrolling = false;
     let touchMoved = false;
 
     const handleTouchStart = (e) => {
@@ -79,11 +124,11 @@ const usePageNavigation = () => {
 
     const handleTouchMove = () => {
       touchMoved = true;
-      // Let browser handle vertical scrolling naturally
+      // Let browser handle vertical scrolling naturally on mobile
     };
 
     const handleTouchEnd = (e) => {
-      if (isTouchScrolling || !touchMoved) return;
+      if (!touchMoved) return;
       
       const touchEndX = e.changedTouches[0].screenX;
       const touchEndY = e.changedTouches[0].screenY;
@@ -96,21 +141,15 @@ const usePageNavigation = () => {
       const isSignificantSwipe = Math.abs(deltaX) > 80;
       
       if (isHorizontalSwipe && isSignificantSwipe) {
-        isTouchScrolling = true;
-        
         if (deltaX > 0) {
           goToPrevPage(); // Swipe right = previous page
         } else {
           goToNextPage(); // Swipe left = next page
         }
-        
-        setTimeout(() => {
-          isTouchScrolling = false;
-        }, 500);
       }
     };
 
-    // Keyboard navigation
+    // Keyboard navigation with custom scroll snap
     const handleKeyDown = (e) => {
       // Don't interfere with form inputs
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
@@ -138,8 +177,16 @@ const usePageNavigation = () => {
         case 'w':
         case 'W':
           e.preventDefault();
-          if (scrollableElement) {
-            scrollableElement.scrollBy({ top: -100, behavior: 'smooth' });
+          if (scrollableElement && !isScrolling) {
+            isScrolling = true;
+            if (window.innerWidth > 500) {
+              customScrollSnap(scrollableElement, -1);
+            } else {
+              scrollableElement.scrollBy({ top: -100, behavior: 'smooth' });
+            }
+            setTimeout(() => {
+              isScrolling = false;
+            }, 100);
           }
           break;
         
@@ -149,8 +196,16 @@ const usePageNavigation = () => {
         case 's':
         case 'S':
           e.preventDefault();
-          if (scrollableElement) {
-            scrollableElement.scrollBy({ top: 100, behavior: 'smooth' });
+          if (scrollableElement && !isScrolling) {
+            isScrolling = true;
+            if (window.innerWidth > 500) {
+              customScrollSnap(scrollableElement, 1);
+            } else {
+              scrollableElement.scrollBy({ top: 100, behavior: 'smooth' });
+            }
+            setTimeout(() => {
+              isScrolling = false;
+            }, 100);
           }
           break;
         
@@ -176,11 +231,8 @@ const usePageNavigation = () => {
         document.removeEventListener('touchend', handleTouchEnd);
         document.removeEventListener('keydown', handleKeyDown, false);
       }
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
     };
-  }, [goToNextPage, goToPrevPage, getCurrentScrollableElement]);
+  }, [goToNextPage, goToPrevPage, getCurrentScrollableElement, customScrollSnap]);
 
   return { currentPageIndex, totalPages: pages.length, goToNextPage, goToPrevPage };
 };

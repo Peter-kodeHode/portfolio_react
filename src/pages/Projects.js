@@ -57,7 +57,11 @@ function Projects() {
                   rel="noopener noreferrer"
                 >
                   Se på Github{" "}
-                  <img className="github-img" src={GitHubImg} alt="Github logo" />
+                  <img
+                    className="github-img"
+                    src={GitHubImg}
+                    alt="Github logo"
+                  />
                 </a>
               </div>
             </div>
@@ -90,7 +94,11 @@ function Projects() {
                   rel="noopener noreferrer"
                 >
                   Se mer på Github{" "}
-                  <img className="github-img" src={GitHubImg} alt="Github logo" />
+                  <img
+                    className="github-img"
+                    src={GitHubImg}
+                    alt="Github logo"
+                  />
                 </a>
               </div>
             </div>
@@ -113,7 +121,6 @@ function Projects() {
           <div className="projects">
             <h1>{PROJECTS_MORE_COMING}</h1>
           </div>
-
           <Footer />
         </div>
       </AnimatedPage>
