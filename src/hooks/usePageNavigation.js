@@ -77,6 +77,10 @@ const usePageNavigation = () => {
   // Handle all navigation events
   useEffect(() => {
     let isScrolling = false;
+    let keyHoldTimer = null;
+    let keyHoldDelay = 600; // Initial delay before repeat starts
+    let keyRepeatDelay = 300; // Reduced to match faster tapping
+    let scrollDelay = 300; // Match the repeat delay
 
     const handleWheel = (e) => {
       if (!document.body) return;
@@ -105,7 +109,7 @@ const usePageNavigation = () => {
           // Reset scrolling flag after a short delay
           setTimeout(() => {
             isScrolling = false;
-          }, 300);
+          }, scrollDelay);
         }
       }
       // Mobile: Let CSS handle scrolling naturally (don't preventDefault)
@@ -149,14 +153,49 @@ const usePageNavigation = () => {
       }
     };
 
-    // Keyboard navigation with custom scroll snap
+    // Function to handle vertical scroll with custom timing
+    const handleVerticalScroll = (direction) => {
+      if (isScrolling) return;
+      
+      const scrollableElement = getCurrentScrollableElement();
+      if (scrollableElement) {
+        isScrolling = true;
+        if (window.innerWidth > 500) {
+          customScrollSnap(scrollableElement, direction);
+        } else {
+          scrollableElement.scrollBy({ top: direction * 100, behavior: 'smooth' });
+        }
+        setTimeout(() => {
+          isScrolling = false;
+        }, scrollDelay); // Use the same delay as repeat
+      }
+    };
+
+    // Function to start key repeat with custom timing
+    const startKeyRepeat = (direction) => {
+      // Clear any existing timer
+      if (keyHoldTimer) {
+        clearTimeout(keyHoldTimer);
+      }
+      
+      // Set up repeat timer
+      keyHoldTimer = setTimeout(() => {
+        const repeatScroll = () => {
+          if (keyHoldTimer) { // Only continue if key is still held
+            handleVerticalScroll(direction);
+            keyHoldTimer = setTimeout(repeatScroll, keyRepeatDelay);
+          }
+        };
+        repeatScroll();
+      }, keyHoldDelay);
+    };
+
+    // Keyboard navigation with custom scroll snap and timing
     const handleKeyDown = (e) => {
       // Don't interfere with form inputs
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
         return;
       }
-
-      const scrollableElement = getCurrentScrollableElement();
 
       switch (e.key) {
         // Horizontal navigation keys
@@ -177,17 +216,10 @@ const usePageNavigation = () => {
         case 'w':
         case 'W':
           e.preventDefault();
-          if (scrollableElement && !isScrolling) {
-            isScrolling = true;
-            if (window.innerWidth > 500) {
-              customScrollSnap(scrollableElement, -1);
-            } else {
-              scrollableElement.scrollBy({ top: -100, behavior: 'smooth' });
-            }
-            setTimeout(() => {
-              isScrolling = false;
-            }, 100);
-          }
+          // Handle initial scroll immediately
+          handleVerticalScroll(-1);
+          // Set up repeat scrolling if key is held
+          startKeyRepeat(-1);
           break;
         
         // Vertical scroll keys - down
@@ -196,17 +228,10 @@ const usePageNavigation = () => {
         case 's':
         case 'S':
           e.preventDefault();
-          if (scrollableElement && !isScrolling) {
-            isScrolling = true;
-            if (window.innerWidth > 500) {
-              customScrollSnap(scrollableElement, 1);
-            } else {
-              scrollableElement.scrollBy({ top: 100, behavior: 'smooth' });
-            }
-            setTimeout(() => {
-              isScrolling = false;
-            }, 100);
-          }
+          // Handle initial scroll immediately
+          handleVerticalScroll(1);
+          // Set up repeat scrolling if key is held
+          startKeyRepeat(1);
           break;
         
         default:
@@ -215,8 +240,30 @@ const usePageNavigation = () => {
       }
     };
 
+    const handleKeyUp = (e) => {
+      // Stop key repeat when key is released
+      switch (e.key) {
+        case 'ArrowUp':
+        case 'PageUp':
+        case 'w':
+        case 'W':
+        case 'ArrowDown':
+        case 'PageDown':
+        case 's':
+        case 'S':
+          if (keyHoldTimer) {
+            clearTimeout(keyHoldTimer);
+            keyHoldTimer = null;
+          }
+          break;
+        default:
+          break;
+      }
+    };
+
     // Event listeners
     document.addEventListener('keydown', handleKeyDown, false);
+    document.addEventListener('keyup', handleKeyUp, false);
     document.addEventListener('wheel', handleWheel, { passive: false, capture: true });
     document.addEventListener('touchstart', handleTouchStart, { passive: true });
     document.addEventListener('touchmove', handleTouchMove, { passive: true });
@@ -224,12 +271,16 @@ const usePageNavigation = () => {
     
     // Cleanup
     return () => {
+      if (keyHoldTimer) {
+        clearTimeout(keyHoldTimer);
+      }
       if (document) {
         document.removeEventListener('wheel', handleWheel, true);
         document.removeEventListener('touchstart', handleTouchStart);
         document.removeEventListener('touchmove', handleTouchMove);
         document.removeEventListener('touchend', handleTouchEnd);
         document.removeEventListener('keydown', handleKeyDown, false);
+        document.removeEventListener('keyup', handleKeyUp, false);
       }
     };
   }, [goToNextPage, goToPrevPage, getCurrentScrollableElement, customScrollSnap]);
