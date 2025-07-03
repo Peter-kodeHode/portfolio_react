@@ -9,16 +9,17 @@ const usePageNavigation = () => {
   const pages = useMemo(() => ['/aboutme', '/', '/projects'], []);
   const currentPageIndex = pages.indexOf(location.pathname);
 
+  // Track navigation direction
   const goToNextPage = useCallback(() => {
     // Wrap around to first page if at the end
     const nextIndex = currentPageIndex === pages.length - 1 ? 0 : currentPageIndex + 1;
-    navigate(pages[nextIndex]);
+    navigate(pages[nextIndex], { state: { direction: 'right' } });
   }, [currentPageIndex, navigate, pages]);
 
   const goToPrevPage = useCallback(() => {
     // Wrap around to last page if at the beginning
     const prevIndex = currentPageIndex === 0 ? pages.length - 1 : currentPageIndex - 1;
-    navigate(pages[prevIndex]);
+    navigate(pages[prevIndex], { state: { direction: 'left' } });
   }, [currentPageIndex, navigate, pages]);
 
   // Handle horizontal scroll

@@ -1,6 +1,6 @@
 import React from "react";
-import FaceBookImg from "../images/Footer/facebook.png";
-import GitHubImg from "../images/Footer/github.png";
+import FaceBookImg from "../images/Footer/facebook.svg";
+import GitHubImg from "../images/Footer/github.svg";
 
 function Footer() {
   return (

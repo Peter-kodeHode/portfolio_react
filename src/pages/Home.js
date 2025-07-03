@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PoddinFace from "../images/Home/poddinfacerealvector.png";
 import CodeImg from "../images/Home/code.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
@@ -16,6 +16,7 @@ import {
 
 function Home() {
   const homePageRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Auto-focus the scroll container when component mounts
@@ -26,7 +27,7 @@ function Home() {
 
   return (
     <>
-      <AnimatedPage>
+      <AnimatedPage direction={location.state?.direction}>
         <div className="home-page" tabIndex="0" ref={homePageRef}>
           <div className="introduction">
             <p>
@@ -59,9 +60,7 @@ function Home() {
               <img src={CodeImg} alt="Code snippets" />
             </div>
           </div>
-          <div className="footer">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </AnimatedPage>
     </>

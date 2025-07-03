@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import BlackJackImg from "../images/Projects/blackjack.png";
 import SunnySideImg from "../images/Projects/sunnyside.png";
 import FigmaImg from "../images/Projects/figma.png";
 import AnimatedPage from "../globalComponents/AnimatedPage";
-import GitHubImg from "../images/Footer/github.png";
+import GitHubImg from "../images/Footer/github.svg";
 import Footer from "../globalComponents/Footer";
 import HideArrowDown from "../globalComponents/HideArrowDown";
 import {
@@ -17,6 +18,7 @@ import {
 function Projects() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const pageRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Auto-focus the scroll container when component mounts
@@ -31,7 +33,7 @@ function Projects() {
 
   return (
     <>
-      <AnimatedPage>
+      <AnimatedPage direction={location.state?.direction}>
         <div className="projects-page" tabIndex="0" ref={pageRef}>
           <div className="projects">
             <h1>{PROJECTS_INTRODUCTION}</h1>

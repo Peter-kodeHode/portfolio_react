@@ -1,24 +1,21 @@
 import { motion } from "motion/react";
 
-const animations = {
-  initial: {
-    opacity: 0,
-    x: 100,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-  },
-  exit: {
-    opacity: 0,
-    x: -100,
-  },
-};
+const AnimatedPage = ({ children, direction = "right" }) => {
+  const animations = {
+    initial: {
+      opacity: 0,
+      x: direction === "right" ? 100 : -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+    },
+    exit: {
+      opacity: 0,
+      x: direction === "right" ? -100 : 100,
+    },
+  };
 
-
-
-const AnimatedPage = ({ children }) => {
- 
   return (
     <motion.div
       variants={animations}

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import MyFace from "../images/AboutMe/itsme.jpg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import Footer from "../globalComponents/Footer";
@@ -15,8 +16,10 @@ import {
   ABOUT_ME_PARAGRAPH4,
   ABOUT_ME_PARAGRAPH5,
 } from "../language_and_strings/no";
+
 function AboutMe() {
   const pageRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (pageRef.current) {
@@ -26,7 +29,7 @@ function AboutMe() {
 
   return (
     <>
-      <AnimatedPage>
+      <AnimatedPage direction={location.state?.direction}>
         <div className="aboutme-page" tabIndex="0" ref={pageRef}>
           <div className="aboutme">
             <h1>{ABOUT_ME_INTRODUCTION}</h1>
