@@ -20,6 +20,14 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+
+    .introduction,
+  .box-container,
+  .footer,
+  .projects,
+  .aboutme {
+    height: 85dvh; /* Consistent height units */
+  }
   
   .home-page::-webkit-scrollbar,
   .aboutme-page::-webkit-scrollbar,
@@ -28,8 +36,8 @@
   }
 
   .introduction {
-    
     font-size: 8dvw;
+    
     line-height: 2.5rem;
     height: 85dvh;
   }
@@ -113,12 +121,12 @@
   }
 
   .aboutme p {
-    font-size: 5.5dvw;
+    font-size: 5dvw;
     line-height: 4dvh;
-    margin: auto;
+    margin: 2dvh auto 2dvh auto;
     padding: 1rem;
-    max-width: 90dvw;
-    min-width: auto;
+    max-width: 95dvw;
+    
   }
 
   .aboutgrey {

@@ -19,8 +19,8 @@ export const ABOUT_ME_PARAGRAPH2 =
 export const ABOUT_ME_PARAGRAPH3 =
   "Jeg har fra en tidlig alder vært interessert i teknologi, gaming og data og har da anskaffet meg litt forskjellig erfaring fra disse interessene. Jeg har alltid vært den som har måttet hjelpe familiemedlemmer med tekniske problemer, til min noen ganger store ergelse.";
 export const ABOUT_ME_PARAGRAPH4 =
-  "Var tidlig interessert i modding av spill, og lærte meg i mine yngre år det å programmere litt i Java i sammenheng med at jeg laget meg en privatserver innenfor spillet RuneScape, som jeg da spilte en del. Har også litt smått med erfaring innenfor Photoshop og Paint.NET, da jeg har brukt dette en del til å tulle med venner gjennom memes og interne spøker. Jeg har forsåvidt litt innsikt i nettverk ettersom jeg var en hyppig LAN deltaker og har tidligere hostet servere innenfor forskjellige spill også.";
-export const ABOUT_ME_PARAGRAPH5 =
+  "Var tidlig interessert i modding av spill, og lærte meg i mine yngre år det å programmere litt i Java i sammenheng med at jeg laget meg en privatserver innenfor spillet RuneScape, som jeg da spilte en del. Jeg har forsåvidt litt innsikt i nettverk ettersom jeg var en hyppig LAN deltaker og har tidligere hostet servere innenfor forskjellige spill også.";
+  export const ABOUT_ME_PARAGRAPH5 =
   "Gamer, skater, ser en del på film og hører mye på musikk. Bruker også mye tid med venner og min datter på 10 år. Vi har også noen rare marsvin. Utenom alt dette, så sier mamma at jeg er en snill og kjekk gutt.";
 
 // Projects page text
