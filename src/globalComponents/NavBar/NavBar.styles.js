@@ -5,9 +5,9 @@ export const StyledNavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   height: 15vh; 
-  border-bottom: solid var(--primary) 6px;
+  border-bottom: solid var(--secondary) 6px;
   position: sticky; 
   top: 0;
   z-index: 10;

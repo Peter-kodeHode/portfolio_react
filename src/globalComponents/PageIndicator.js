@@ -21,9 +21,9 @@ const Dot = styled.div`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: ${props => props.active ? 'var(--primary)' : 'rgba(0, 0, 0, 0.3)'};
+  background-color: ${props => props.active ? 'var(--secondary)' : 'rgba(0, 0, 0, 0.3)'};
   transition: all 300ms ease;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--primary);
   cursor: pointer;
   pointer-events: auto; /* Re-enable pointer events for the dots themselves */
   

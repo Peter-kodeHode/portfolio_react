@@ -9,12 +9,12 @@ const GlobalStyle = createGlobalStyle`
 }
 
 :root{
-    --primary: #000000ff;
-    --secondary: #ffffffff;
+    --primary: #ffffffff;
+    --secondary: #000000ff;
 }
 
 body{
-    background-color: var(--secondary);
+    background-color: var(--primary);
     overflow-y: hidden;
     overflow-x: hidden;
     min-width: 100%;
