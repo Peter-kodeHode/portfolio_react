@@ -21,14 +21,14 @@ const Dot = styled.div`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: ${props => props.active ? 'var(--secondary)' : 'rgba(0, 0, 0, 0.3)'};
+  background-color: ${props => props.active ? 'var(--secondary)' : 'var(--primary)'};
   transition: all 300ms ease;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   cursor: pointer;
   pointer-events: auto; /* Re-enable pointer events for the dots themselves */
   
-  &:hover {
-    transform: scale(1.2);
+  // &:hover {
+  //   transform: scale(1.2); Maybe make clickable
   }
 `;
 

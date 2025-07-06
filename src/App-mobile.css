@@ -11,6 +11,7 @@
 @media (max-width: 500px) {
   .App > div {
     height: 85dvh;
+     scroll-behavior: smooth;
   }
   
   .home-page,
@@ -19,6 +20,8 @@
     height: 85dvh;
     scrollbar-width: none;
     -ms-overflow-style: none;
+        scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 
     .introduction,
@@ -26,7 +29,9 @@
   .footer,
   .projects,
   .aboutme {
-    height: 85dvh; /* Consistent height units */
+    height: 85dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   
   .home-page::-webkit-scrollbar,

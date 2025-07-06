@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PoddinFace from "../images/Home/poddinfacerealvector.png";
-import CodeImg from "../images/Home/code.jpg";
+import CodeImg from "../images/Home/code.svg";
 import AnimatedPage from "../globalComponents/AnimatedPage";
 import Footer from "../globalComponents/Footer";
 import HideArrowDown from "../globalComponents/HideArrowDown";
@@ -50,6 +50,7 @@ function Home() {
               <img
                 src={PoddinFace}
                 alt="a black and white portrait of portfolio owner"
+                className="poddin-vector"
               />
             </div>
 

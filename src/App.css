@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 @import url('./App-mobile.css');
 
+
 .App {
   touch-action: pan-y pinch-zoom;
   overscroll-behavior-x: touch;
@@ -32,34 +33,6 @@
   height: 85vh; 
   width: 100%;
   overflow-y: auto;
-  /* Remove scroll-snap properties for desktop */
-}
-
-/* Keep smooth scrolling and snap ONLY for mobile */
-@media (max-width: 500px) {
-  .App > div {
-    height: 85dvh;
-    scroll-behavior: smooth;
-  }
-  
-  .home-page,
-  .aboutme-page,
-  .projects-page {
-    height: 85dvh;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-  }
-  
-  .introduction,
-  .box-container,
-  .footer,
-  .projects,
-  .aboutme {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
 }
 
 .App * {
@@ -145,7 +118,6 @@ textarea {
   bottom: 4rem;
   left: 50%; 
   transform: translateX(-50%);
-  color: var(--secondary);
   transition: all 500ms ease-in-out;
   animation: bounce 1.5s infinite;
   opacity: 1;
@@ -222,19 +194,16 @@ textarea {
   text-decoration: line-through;
 }
 
+
 .box-container img {
   width: 60%;
   height: 60%;
-  filter: grayscale(100%);
   border-radius: 50px;
-  border: solid var(--secondary) 4px;
-  background-color: var(--primary);
+  filter:var(--icon-filter);
   transition: all 1000ms;
 }
 
-.box-container img:active {
-  transform: scale(1.5);
-}
+
 
 .black-box1,
 .white-box1,
@@ -513,6 +482,8 @@ textarea {
   animation: none;
 }
 
+
+
 @keyframes gentleBounce {
   0%,
   80%,
@@ -536,8 +507,7 @@ textarea {
 }
 
 .github-img {
-  background-color: var(--primary);
-  border-radius: 50%;
+  filter: invert(100%) var(--icon-filter);
   width: 2rem;
   height: 2rem;
   margin-left: 0.5rem;

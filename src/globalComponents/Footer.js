@@ -12,14 +12,14 @@ function Footer() {
             rel="noopener noreferrer"
             href="https://www.facebook.com/peter.daniel.nygaard/"
           >
-            <img src={FaceBookImg} alt="Facebook logo" />
+            <img src={FaceBookImg} className="social-icon" alt="Facebook logo" />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/Peter-kodeHode"
           >
-            <img src={GitHubImg} alt="Github logo" />
+            <img src={GitHubImg} alt="Github logo" className="social-icon" />
           </a>
         </div>
         <div className="contact-info">

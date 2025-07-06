@@ -12,7 +12,6 @@ export const StyledNavBar = styled.nav`
   top: 0;
   z-index: 10;
   pointer-events: none; /* This allows wheel and touch events to pass through */
-   
   & > a {
     margin: 2em;
     pointer-events: auto; /* Re-enable for navigation links */
@@ -28,7 +27,7 @@ export const StyledNavBar = styled.nav`
 
 // Create a base style for all icons
 const baseIconStyles = css`
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: var(--icon-filter) drop-shadow(0px 4px 4px var(--shadow-color));
   transition: all 500ms ease-in-out;
   pointer-events: auto; /* Ensure icons are clickable */
   
@@ -39,7 +38,7 @@ const baseIconStyles = css`
   &:active {
     transform: scale(1.5);
     transition: 150ms all ease-in-out;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    filter: var(--icon-filter) drop-shadow(0px 4px 4px var(--shadow-color));
     @media (max-width: 500px) {
       transition: 1ms;
     }
@@ -65,7 +64,7 @@ export const Logo = styled.img`
     @media (max-width: 500px) {
       -webkit-transform: rotate(180deg);
       transform: scale(1.2) rotate(180deg);
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+      filter: var(--icon-filter) drop-shadow(0px 4px 4px var(--shadow-color));
       transition: 1ms;
     }
   }
@@ -75,7 +74,8 @@ export const Home = styled.img`
   ${baseIconStyles}
 
   &:hover {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    transform: scale(1.1);
+    filter: var(--icon-filter) drop-shadow(0px 6px 6px var(--shadow-color));
     transition: all 200ms ease;
     @media (max-width: 500px) {
       transform: none;
@@ -88,10 +88,12 @@ export const CheckList = styled.img`
   ${baseIconStyles}
 
   &:hover {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1));
+    transform: scale(1.1);
+    filter: var(--icon-filter) drop-shadow(0px 6px 6px var(--shadow-color));
     transition: all 200ms ease;
     @media (max-width: 500px) {
-      filter: none;
+      transform: none;
+      filter: var(--icon-filter);
       transition: none;
     }
   }

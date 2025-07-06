@@ -45,7 +45,7 @@ function Projects() {
               <img
                 className="greyimg"
                 src={BlackJackImg}
-                alt=""
+                alt="Blackjack project"
                 onClick={() => toggleDropdown(0)}
               />
               <div className="dropdown-content">
