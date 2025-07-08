@@ -69,17 +69,13 @@
   .box-container a:active{
     scale:1.5;
   }
- 
-  .white-box1 img {
+
+  .box-container img{
     object-fit: contain;
-    height: 65%;
-    width: 65%;
+    height: 60%;
+    width: 60%;
   }
-  .white-box2 img {
-    object-fit: fill;
-    height: 65%;
-    width: 65%;
-  }
+
   .contact-info ul {
     flex-wrap: wrap;
     margin: 1rem 0;

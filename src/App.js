@@ -19,8 +19,8 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <PageIndicator />
-      <ThemeToggle /> {/* Add this temporarily to test */}
       <NavBar />
+      <ThemeToggle />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
