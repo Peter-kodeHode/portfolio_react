@@ -1,15 +1,16 @@
 import React from "react";
 import { StyledNavBar } from "./NavBar.styles";
 import { NavBarLinks } from "./NavBarLinks";
-import ThemeToggle from "./ThemeToggle"; // Updated import path
-
+import ThemeToggle from "./ThemeToggle";
 
 
 function NavBar() {
   return (
+    
     <StyledNavBar>
+     
       <NavBarLinks />
-       <ThemeToggle />
+      <ThemeToggle />
     </StyledNavBar>
   );
 }
