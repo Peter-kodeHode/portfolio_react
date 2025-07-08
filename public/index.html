@@ -2,13 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    
+    <!-- Essential favicons with dark mode support -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <!-- Light mode favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/icons/lightmode/favicon-32x32.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/icons/lightmode/favicon-16x16.png" media="(prefers-color-scheme: light)">
+    
+    <!-- Dark mode favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/icons/darkmode/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/icons/darkmode/favicon-16x16-dark.png" media="(prefers-color-scheme: dark)">
+
+    <!-- Apple touch icons with dark mode support -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/lightmode/apple-touch-icon.png" media="(prefers-color-scheme: light)" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/darkmode/apple-touch-icon-dark.png" media="(prefers-color-scheme: dark)" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="Peter Daniel"
-      content="Peter Daniel's portfolio"
-    />
+    <meta name="description" content="Peter Daniel's portfolio" />
 
     <!-- GitHub Pages routing hack -->
     <script type="text/javascript">
@@ -24,7 +36,6 @@
       }(window.location))
     </script>
 
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Peter Daniel's portfolio</title>
   </head>
