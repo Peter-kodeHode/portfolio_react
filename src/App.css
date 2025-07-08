@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap");
-@import url('./App-mobile.css');
-
+@import url("./App-mobile.css");
 
 .App {
   touch-action: pan-y pinch-zoom;
@@ -30,7 +29,7 @@
 .footer,
 .projects,
 .aboutme {
-  height: 85vh; 
+  height: 85vh;
   width: 100%;
   overflow-y: auto;
 }
@@ -73,7 +72,7 @@ textarea {
 .projects,
 .aboutme {
   scroll-snap-align: start;
-  height: 85vh; 
+  height: 85vh;
   width: 100%;
   scroll-snap-stop: always;
   overflow-y: auto;
@@ -116,7 +115,7 @@ textarea {
   height: 4rem;
   position: absolute;
   bottom: 4rem;
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
   transition: all 500ms ease-in-out;
   animation: bounce 1.5s infinite;
@@ -182,12 +181,11 @@ textarea {
   font-size: 4rem;
   text-decoration: none;
   transition: all 200ms ease-in-out;
-  
 }
 
 .box-container a:hover {
-  font-weight:600;
-  scale:1.2;
+  font-weight: 600;
+  scale: 1.2;
   transition: all 200ms ease-in-out;
 }
 
@@ -195,16 +193,13 @@ textarea {
   text-decoration: line-through;
 }
 
-
 .box-container img {
   width: 60%;
   height: 60%;
   border-radius: 50px;
-  filter:var(--icon-filter);
+  filter: var(--icon-filter);
   transition: all 1000ms;
 }
-
-
 
 .black-box1,
 .white-box1,
@@ -267,7 +262,7 @@ textarea {
 
 .socials img:hover {
   transform: scale(1.5);
- transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .contact-info {
@@ -327,9 +322,6 @@ textarea {
   min-width: 100%;
 }
 
-
-
-
 .projects-clickme {
   color: var(--primary);
   margin: auto 1rem auto 0;
@@ -340,7 +332,7 @@ textarea {
   -webkit-filter: grayscale(100%);
   transition: all 500ms ease-out;
   max-width: 25vw;
-  max-height:50vh;
+  max-height: 50vh;
   border: 6px var(--secondary) solid;
 }
 
@@ -355,13 +347,11 @@ textarea {
   color: var(--secondary);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size:8dvw;
+  font-size: 8dvw;
   text-align: center;
   transition: text-decoration 400ms;
   max-width: 100%;
 }
-
-
 
 .aboutme p {
   color: var(--secondary);
@@ -375,8 +365,6 @@ textarea {
   min-width: 75vw;
   max-width: 50vw;
 }
-
-
 
 .dropdown {
   position: relative;
@@ -482,8 +470,6 @@ textarea {
   opacity: 0;
   animation: none;
 }
-
-
 
 @keyframes gentleBounce {
   0%,

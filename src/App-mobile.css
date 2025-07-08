@@ -11,20 +11,20 @@
 @media (max-width: 500px) {
   .App > div {
     height: 85dvh;
-     scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
-  
+
   .home-page,
   .aboutme-page,
   .projects-page {
     height: 85dvh;
     scrollbar-width: none;
     -ms-overflow-style: none;
-        scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
   }
 
-    .introduction,
+  .introduction,
   .box-container,
   .footer,
   .projects,
@@ -33,11 +33,11 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
-  
+
   .home-page::-webkit-scrollbar,
   .aboutme-page::-webkit-scrollbar,
   .projects-page::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
 
   .introduction {
@@ -58,13 +58,18 @@
     bottom: 3vh;
   }
 
-
   .box-container a {
     font-size: 8dvw;
   }
-  .box-container a:active {
-    font-weight: bold;
+  .box-container a:hover {
+  font-weight: 400;
+  scale: 1;
   }
+
+  .box-container a:active{
+    scale:1.5;
+  }
+ 
   .white-box1 img {
     object-fit: contain;
     height: 65%;
@@ -92,7 +97,6 @@
     font-size: 4vw;
     line-height: 1.2rem;
     max-width: 80vw;
-    
   }
 
   .dropdown.active .dropdown-content {
@@ -100,15 +104,13 @@
     max-height: 75dvh !important;
   }
 
-
-
   .dropdown::after {
     top: 30px;
     right: 40px;
-    font-size:25px;
+    font-size: 25px;
     padding: 4px 6px;
   }
-  
+
   .greyimg {
     width: 100dvw;
     height: 50dvh;
@@ -130,7 +132,6 @@
     margin: 2dvh auto 2dvh auto;
     padding: 1rem;
     max-width: 95dvw;
-    
   }
 
   .aboutgrey {
