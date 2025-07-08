@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckList, Home, Logo } from "./NavBar.styles";
-import LogoImg from "../../images/NavBar/Pd v2.png";
-import HomeImg from "../../images/NavBar/home.png";
-import CheckListImg from "../../images/NavBar/checklist.png";
+import LogoImg from "../../images/NavBar/image2vector.svg";
+import HomeImg from "../../images/NavBar/home.svg";
+import FolderImg from "../../images/NavBar/folder.svg";
+
 
 export const NavBarLinks = () => {
   return (
@@ -15,8 +16,9 @@ export const NavBarLinks = () => {
         <Home src={HomeImg} alt="Home button" />
       </Link>
       <Link to="/projects">
-        <CheckList src={CheckListImg} alt="Button to projects page" />
+        <CheckList src={FolderImg} alt="Button to projects page" />
       </Link>
+     
     </>
   );
 };

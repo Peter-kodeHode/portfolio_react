@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledNavBar = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
   background-color: var(--primary);
@@ -27,9 +27,11 @@ export const StyledNavBar = styled.nav`
 
 // Create a base style for all icons
 const baseIconStyles = css`
-  filter: var(--icon-filter) drop-shadow(0px 4px 4px var(--shadow-color));
+  filter: var(--icon-filter);
   transition: all 500ms ease-in-out;
   pointer-events: auto; /* Ensure icons are clickable */
+  width: 5dvw;
+  height: 5dvh;
   
   @media (max-width: 500px) {
     width: 3em;
@@ -95,6 +97,56 @@ export const CheckList = styled.img`
       transform: none;
       filter: var(--icon-filter);
       transition: none;
+    }
+  }
+`;
+
+export const ThemeButton = styled.button`
+  height: 15dvh;
+  background: none;
+  border: none;
+  padding: 24px 24px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  outline: none;
+  pointer-events: auto;
+  
+  @media (max-width: 500px) {
+    height: 15dvh;
+    padding: 1em;
+  }
+
+  img {
+    width: 5dvw;
+    height: 5dvh;
+    display: block;
+    filter: var(--icon-filter);
+    transition: all 500ms ease-in-out;
+    
+    @media (max-width: 500px) {
+      width: 3em;
+      height: 3em;
+    }
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+    filter: var(--icon-filter) drop-shadow(0px 6px 6px var(--shadow-color));
+    transition: all 200ms ease;
+    
+    @media (max-width: 500px) {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  &:active img {
+    transform: scale(1.5);
+    transition: 150ms all ease-in-out;
+    
+    @media (max-width: 500px) {
+      transform: scale(1.2);
+      transition: 1ms;
     }
   }
 `;

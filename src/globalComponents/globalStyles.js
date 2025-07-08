@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
 * {
     margin: 0;
@@ -13,10 +12,10 @@ const GlobalStyle = createGlobalStyle`
     --primary: #ffffffff;
     --secondary: #000000ff;
     --icon-filter: invert(0%);
-    --shadow-color: rgba(0, 0, 0, 1);
+    --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
-/* Only apply filter to social icons and poddin vector (not navbar icons since they use styled-components) */
+
 .social-icon,
 .poddin-vector,
 .arrow-down {

@@ -10,7 +10,7 @@ import { AnimatePresence } from "motion/react";
 import GlobalStyle from "./globalComponents/globalStyles";
 import usePageNavigation from "./hooks/usePageNavigation";
 import PageIndicator from "./globalComponents/PageIndicator";
-import ThemeToggle from "./components/ThemeToggle"; // Import the ThemeToggle component
+
 function App() {
   const location = useLocation();
   usePageNavigation(); // This will handle all the navigation logic
@@ -20,7 +20,6 @@ function App() {
       <GlobalStyle />
       <PageIndicator />
       <NavBar />
-      <ThemeToggle />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
