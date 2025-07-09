@@ -66,7 +66,9 @@ function App() {
         transition={{ duration: 0.5 }}
       >
         <div className="loading-content">
+          <h1>Laster..</h1>
           <div className="loading-logo">
+            
             <Logo />
           </div>
         </div>

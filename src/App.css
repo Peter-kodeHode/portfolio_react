@@ -514,6 +514,16 @@ textarea {
   z-index: 9999;
 }
 
+.loading-screen h1{
+  color: var(--secondary);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: pulseBounce 0.4s infinite;
+}
+
 .loading-logo {
   width: 25dvw;
   height: 25dvh;
