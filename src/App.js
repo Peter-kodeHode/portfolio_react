@@ -13,6 +13,13 @@ import usePageNavigation from "./hooks/usePageNavigation";
 import PageIndicator from "./globalComponents/PageIndicator";
 import { ReactComponent as Logo } from "./images/NavBar/image2vector.svg";
 
+// Import all assets that need preloading with correct paths
+import homeIcon from "./images/NavBar/home.svg";
+import folderIcon from "./images/NavBar/folder.svg";
+import logoIcon from "./images/NavBar/image2vector.svg";
+import moonIcon from "./images/ThemeToggle/moon.svg";
+import sunIcon from "./images/ThemeToggle/sun.svg";
+
 function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
@@ -21,12 +28,14 @@ function App() {
 
   useEffect(() => {
     const preloadAssets = async () => {
-      // Preload all SVG icons and images
+      // Preload all SVG icons and images with imported paths
       const assetPaths = [
-        "/images/NavBar/svg/home-icon.svg",
-        "/images/NavBar/svg/folder.svg",
-        "/images/NavBar/svg/image2vector.svg",
-        // Add any other critical assets
+        homeIcon,
+        folderIcon,
+        logoIcon,
+        moonIcon,
+        sunIcon,
+        // Add any other critical assets from your navbar and pages
       ];
 
       await Promise.all(
@@ -41,7 +50,7 @@ function App() {
       );
 
       // Minimum loading time for UX (optional)
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await new Promise((resolve) => setTimeout(resolve, 800));
       setIsLoading(false);
     };
 
