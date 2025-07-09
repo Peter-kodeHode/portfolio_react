@@ -527,12 +527,13 @@ textarea {
   height: 30dvh;
   animation: spin 1s linear infinite;
   margin: 5dvh auto auto auto;
+  filter: var(--icon-filter); /* Apply filter to the container */
 }
 
 .loading-logo svg {
   width: 100%;
   height: 100%;
-  fill: var(--icon-filter);
+  /* Remove the fill property that was causing the issue */
 }
 
 .loading-content {
