@@ -144,4 +144,15 @@
   .contact-info {
     margin: 2dvh auto 0 auto;
   }
+
+  .loading-screen h1{
+  font-size: 12.5dvw;
+  margin-bottom: 0;
+}
+
+.loading-logo {
+  width: 35dvw;
+  height: 35dvh;
+  margin: 0 auto auto auto;
+}
 }
