@@ -20,9 +20,7 @@
 }
 
 @media (max-width: 500px) {
-  .navbar {
-    height: 15dvh;
-  }
+
   
   .navbar > a {
     margin: 1em;
