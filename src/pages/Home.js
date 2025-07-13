@@ -37,9 +37,14 @@ function Home() {
           <HideArrowDown containerRef={homePageRef} />
         </div>
 
-        <div className="box-container">
+        <div className="box-container" role="grid" aria-label="Navigasjonsalternativer">
           <div className="black-box1">
-            <Link to="/aboutme">{HOME_TEXT.GRID_ABOUTME}</Link>
+            <Link 
+              to="/aboutme"
+              aria-label="Gå til Om meg siden for å lære mer om Peter Daniel"
+            >
+              {HOME_TEXT.GRID_ABOUTME}
+            </Link>
           </div>
           <div className="white-box1">
             <img
@@ -50,10 +55,18 @@ function Home() {
           </div>
 
           <div className="black-box2">
-            <Link to="projects">{HOME_TEXT.GRID_PROJECTS}</Link>
+            <Link 
+              to="projects"
+              aria-label="Gå til Prosjekter siden for å se Peters arbeid"
+            >
+              {HOME_TEXT.GRID_PROJECTS}
+            </Link>
           </div>
           <div className="white-box2">
-            <img src={CodeImg} alt={ALT_TEXT.CODE_BRACKETS} />
+            <img 
+              src={CodeImg} 
+              alt={ALT_TEXT.CODE_BRACKETS} 
+            />
           </div>
         </div>
       </PageLayout>

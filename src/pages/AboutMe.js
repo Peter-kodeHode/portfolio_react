@@ -14,18 +14,19 @@ function AboutMe() {
   const location = useLocation();
 
   useEffect(() => {
+    // Auto-focus the scroll container when component mounts
     if (pageRef.current) {
       pageRef.current.focus();
     }
   }, []);
 
   return (
-    <>
-      <PageLayout
-        direction={location.state?.direction}
-        pageRef={pageRef}
-        className="aboutme-page"
-      >
+    <PageLayout
+      direction={location.state?.direction}
+      pageRef={pageRef}
+      className="aboutme-page"
+    >
+      <main role="main" aria-label="Om Peter Daniel Nygaard">
         <PageHeader
           title={<>{ABOUT_TEXT.INTRODUCTION}</>}
           containerRef={pageRef}
@@ -43,6 +44,7 @@ function AboutMe() {
               href="https://www.kodehode.no/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Kodehode - åpnes i ny fane"
             >
               {ABOUT_TEXT.PARAGRAPH1_KODEHODE}
             </a>
@@ -51,6 +53,7 @@ function AboutMe() {
               href="https://www.jobloop.no/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Jobloop - åpnes i ny fane"
             >
               {ABOUT_TEXT.PARAGRAPH1_JOBLOOP}
             </a>
@@ -73,9 +76,9 @@ function AboutMe() {
         <div className="aboutme">
           <p>{ABOUT_TEXT.PARAGRAPH5}</p>
         </div>
-        <Footer />
-      </PageLayout>
-    </>
+      </main>
+      
+    </PageLayout>
   );
 }
 

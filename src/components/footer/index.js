@@ -7,12 +7,13 @@ import { ALT_TEXT } from "../../language_and_strings/no";
 function Footer() {
   return (
     <>
-      <div className="footer">
+      <footer className="footer" role="contentinfo">
         <div className="socials">
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.facebook.com/peter.daniel.nygaard/"
+            aria-label="Facebook profil - åpnes i ny fane"
           >
             <img
               src={FaceBookImg}
@@ -24,6 +25,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/Peter-kodeHode"
+            aria-label="GitHub profil - åpnes i ny fane"
           >
             <img
               src={GitHubImg}
@@ -39,21 +41,30 @@ function Footer() {
                 href="https://www.facebook.com/peter.daniel.nygaard/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook profil - åpnes i ny fane"
               >
                 Peter Daniel Nygaard
               </a>
             </li>
             <li>
-              <a href="tel:+4793021764">+4793021764</a>
+              <a
+                href="tel:+4793021764"
+                aria-label="Ring Peter Daniel Nygaard"
+              >
+                +4793021764
+              </a>
             </li>
             <li>
-              <a href="mailto:peter.daniel.nygaard@gmail.com">
+              <a
+                href="mailto:peter.daniel.nygaard@gmail.com"
+                aria-label="Send e-post til Peter Daniel Nygaard"
+              >
                 peter.daniel.nygaard@gmail.com
               </a>
             </li>
           </ul>
         </div>
-      </div>
+      </footer>
     </>
   );
 }

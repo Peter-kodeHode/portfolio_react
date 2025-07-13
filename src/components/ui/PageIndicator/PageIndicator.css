@@ -22,7 +22,6 @@
   background-color: var(--primary);
   transition: all 300ms ease;
   border: 2px solid var(--secondary);
-  cursor: pointer;
   pointer-events: auto;
 }
 
@@ -30,6 +29,3 @@
   background-color: var(--secondary);
 }
 
-.indicator-dot:hover {
-  transform: scale(1.2);
-}

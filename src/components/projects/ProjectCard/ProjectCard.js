@@ -12,18 +12,38 @@ const ProjectCard = ({ project, isActive, onToggle }) => {
           src={project.image}
           alt={project.alt}
           onClick={onToggle}
+          role="button"
+          tabIndex="0"
+          aria-expanded={isActive}
+          aria-label={`${project.alt} - ${isActive ? 'skjul' : 'vis'} prosjektdetaljer`}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onToggle();
+            }
+          }}
         />
-        <div className="dropdown-content">
-          <p>{project.description}</p>
+        <div 
+          className="dropdown-content"
+          aria-hidden={!isActive}
+          role="region"
+          aria-labelledby={`project-${project.id}-title`}
+        >
+          <p id={`project-${project.id}-title`}>{project.description}</p>
           {project.githubUrl && (
             <a
               className="github-link"
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${project.githubText} for ${project.alt} - åpnes i ny fane`}
             >
               {project.githubText}
-              <img className="github-img" src={GitHubImg} alt={ALT_TEXT.GITHUB_LOGO} />
+              <img 
+                className="github-img" 
+                src={GitHubImg} 
+                alt={ALT_TEXT.GITHUB_LOGO} 
+              />
             </a>
           )}
         </div>

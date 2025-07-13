@@ -5,7 +5,11 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <nav className="navbar">
+    <nav 
+      className="navbar"
+      role="navigation" 
+      aria-label="Hovednavigasjon"
+    >
       <NavBarLinks />
       <ThemeToggle />
     </nav>

@@ -9,7 +9,7 @@ export const projectsData = [
   {
     id: 'blackjack',
     image: BlackJackImg,
-    alt: "Blackjack project",
+    alt: "Blackjack kortspill prosjekt",
     description: PROJECTS_TEXT.BLACKJACK_DESCRIPTION,
     githubUrl: "https://github.com/Peter-kodeHode/blackjack",
     githubText: "Se på Github"
@@ -17,7 +17,7 @@ export const projectsData = [
   {
     id: 'sunnyside',
     image: SunnySideImg,
-    alt: "Sunnyside project",
+    alt: "Sunnyside nettside prosjekt",
     description: PROJECTS_TEXT.SUNNYSIDE_DESCRIPTION,
     githubUrl: "https://github.com/Peter-kodeHode/sunnyside",
     githubText: "Se mer på Github"
@@ -25,7 +25,7 @@ export const projectsData = [
   {
     id: 'figma',
     image: FigmaImg,
-    alt: "Figma project",
+    alt: "Figma design prosjekt",
     description: PROJECTS_TEXT.FIGMA_DESCRIPTION,
     githubUrl: null,
     githubText: null

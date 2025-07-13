@@ -36,14 +36,19 @@ function Projects() {
         className="projects"
       />
 
-      {projectsData.map((project, index) => (
-        <ProjectCard
-          key={project.id}
-          project={project}
-          isActive={activeDropdown === index}
-          onToggle={() => toggleDropdown(index)}
-        />
-      ))}
+      <section 
+        aria-label="Mine prosjekter - hold over eller klikk på bildene for å se detaljer"
+        role="region"
+      >
+        {projectsData.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            isActive={activeDropdown === index}
+            onToggle={() => toggleDropdown(index)}
+          />
+        ))}
+      </section>
 
       <div className="projects">
         <h1>{PROJECTS_TEXT.MORE_COMING}</h1>
