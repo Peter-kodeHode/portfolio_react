@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import arrowdown from "../images/Home/arrow-down.svg";
+import arrowdown from "../../../images/Home/arrow-down.svg";
+import { ALT_TEXT } from '../../../language_and_strings/no';
 
 const HideArrowDown = ({ containerRef, scrollThreshold = 50 }) => {
   const [showArrow, setShowArrow] = useState(true);
@@ -31,7 +32,7 @@ const HideArrowDown = ({ containerRef, scrollThreshold = 50 }) => {
     <img 
       className={`arrow-down ${!showArrow ? 'hidden' : ''}`} 
       src={arrowdown} 
-      alt="arrow down" 
+      alt={ALT_TEXT.ARROW_DOWN} 
     />
   );
 };

@@ -1,18 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import BlackJackImg from "../images/Projects/blackjack.png";
-import SunnySideImg from "../images/Projects/sunnyside.png";
-import FigmaImg from "../images/Projects/figma.png";
-import AnimatedPage from "../globalComponents/AnimatedPage";
-import GitHubImg from "../images/Footer/github.svg";
-import Footer from "../globalComponents/Footer";
-import HideArrowDown from "../globalComponents/HideArrowDown";
+import PageLayout from "../components/layout/PageLayout";
+import PageHeader from "../components/ui/PageHeader";
+import ProjectCard from "../components/projects/ProjectCard/ProjectCard";
+import { projectsData } from "../data/projectsData";
 import {
-  PROJECTS_INTRODUCTION,
-  PROJECT_BLACKJACK_DESCRIPTION,
-  PROJECT_SUNNYSIDE_DESCRIPTION,
-  PROJECT_FIGMA_DESCRIPTION,
-  PROJECTS_MORE_COMING,
+PROJECTS_TEXT,
 } from "../language_and_strings/no";
 
 function Projects() {
@@ -32,99 +25,30 @@ function Projects() {
   };
 
   return (
-    <>
-      <AnimatedPage direction={location.state?.direction}>
-        <div className="projects-page" tabIndex="0" ref={pageRef}>
-          <div className="projects">
-            <h1>{PROJECTS_INTRODUCTION}</h1>
-            <HideArrowDown containerRef={pageRef} />
-          </div>
+    <PageLayout
+      direction={location.state?.direction}
+      pageRef={pageRef}
+      className="projects-page"
+    >
+      <PageHeader
+        title={PROJECTS_TEXT.INTRODUCTION}
+        containerRef={pageRef}
+        className="projects"
+      />
 
-          <div className="projects">
-            <div className={`dropdown ${activeDropdown === 0 ? "active" : ""}`}>
-              <img
-                className="greyimg"
-                src={BlackJackImg}
-                alt="Blackjack project"
-                onClick={() => toggleDropdown(0)}
-              />
-              <div className="dropdown-content">
-                <p>{PROJECT_BLACKJACK_DESCRIPTION}</p>
-                <a
-                  className="github-link"
-                  href="https://github.com/Peter-kodeHode/blackjack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Se på Github{" "}
-                  <img
-                    className="github-img"
-                    src={GitHubImg}
-                    alt="Github logo"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
+      {projectsData.map((project, index) => (
+        <ProjectCard
+          key={project.id}
+          project={project}
+          isActive={activeDropdown === index}
+          onToggle={() => toggleDropdown(index)}
+        />
+      ))}
 
-          <div className="projects">
-            <div className={`dropdown ${activeDropdown === 1 ? "active" : ""}`}>
-              <img
-                className="greyimg"
-                src={SunnySideImg}
-                alt=""
-                onClick={() => toggleDropdown(1)}
-              />
-              <div className="dropdown-content">
-                <p>
-                  {PROJECT_SUNNYSIDE_DESCRIPTION.split("Frontend Mentor")[0]}
-                  <a
-                    href="https://www.frontendmentor.io"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Frontend Mentor
-                  </a>
-                  {PROJECT_SUNNYSIDE_DESCRIPTION.split("Frontend Mentor")[1]}
-                </p>
-                <a
-                  className="github-link"
-                  href="https://github.com/Peter-kodeHode/sunnyside"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Se mer på Github{" "}
-                  <img
-                    className="github-img"
-                    src={GitHubImg}
-                    alt="Github logo"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="projects">
-            <div className={`dropdown ${activeDropdown === 2 ? "active" : ""}`}>
-              <img
-                className="greyimg"
-                src={FigmaImg}
-                alt=""
-                onClick={() => toggleDropdown(2)}
-              />
-              <div className="dropdown-content">
-                <p>{PROJECT_FIGMA_DESCRIPTION}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="projects">
-            <h1>{PROJECTS_MORE_COMING}</h1>
-          </div>
-          <Footer />
-        </div>
-      </AnimatedPage>
-    </>
+      <div className="projects">
+        <h1>{PROJECTS_TEXT.MORE_COMING}</h1>
+      </div>
+    </PageLayout>
   );
 }
 

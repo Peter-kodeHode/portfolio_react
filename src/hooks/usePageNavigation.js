@@ -1,12 +1,13 @@
 import { useEffect, useCallback, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { SCROLL_CONFIG, ROUTES, NAVIGATION_KEYS, LAYOUT_CONFIG, SELECTORS } from '../utils/constants';
 
 const usePageNavigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   // Wrap pages array in useMemo to prevent recreation on every render
-  const pages = useMemo(() => ['/aboutme', '/', '/projects'], []);
+  const pages = useMemo(() => [ROUTES.ABOUT.path, ROUTES.HOME.path, ROUTES.PROJECTS.path], []);
   const currentPageIndex = pages.indexOf(location.pathname);
 
   // Navigation functions
@@ -22,14 +23,14 @@ const usePageNavigation = () => {
 
   // Helper function to get current scrollable page
   const getCurrentScrollableElement = useCallback(() => {
-    return document.querySelector('.home-page, .aboutme-page, .projects-page');
+    return document.querySelector(SELECTORS.SCROLLABLE_PAGES);
   }, []);
 
   // Custom scroll snap implementation - only for desktop
   const customScrollSnap = useCallback((container, direction) => {
-    if (window.innerWidth <= 500) return; // Don't interfere with mobile CSS scroll
+    if (window.innerWidth <= LAYOUT_CONFIG.MOBILE_BREAKPOINT) return; // Don't interfere with mobile CSS scroll
     
-    const sectionHeight = window.innerHeight * 0.85;
+    const sectionHeight = window.innerHeight * LAYOUT_CONFIG.SECTION_HEIGHT_RATIO;
     const currentScroll = container.scrollTop;
     const currentSection = Math.round(currentScroll / sectionHeight);
     
@@ -41,7 +42,7 @@ const usePageNavigation = () => {
     }
     
     // Get all sections in the current page
-    const sections = container.querySelectorAll('.introduction, .box-container, .footer, .projects, .aboutme');
+    const sections = container.querySelectorAll(SELECTORS.PAGE_SECTIONS);
     const maxSection = sections.length - 1;
     
     // Clamp target section to valid range
@@ -52,7 +53,7 @@ const usePageNavigation = () => {
     // Smooth scroll to target with requestAnimationFrame - slightly smoother
     const startScroll = container.scrollTop;
     const distance = targetScroll - startScroll;
-    const duration = 400; // Increased from 300ms for smoother feel
+    const duration = SCROLL_CONFIG.SCROLL_DURATION;
     const startTime = performance.now();
 
     const animateScroll = (currentTime) => {
@@ -78,9 +79,9 @@ const usePageNavigation = () => {
   useEffect(() => {
     let isScrolling = false;
     let keyHoldTimer = null;
-    let keyHoldDelay = 600; // Initial delay before repeat starts
-    let keyRepeatDelay = 300; // Reduced to match faster tapping
-    let scrollDelay = 300; // Match the repeat delay
+    let keyHoldDelay = SCROLL_CONFIG.KEY_HOLD_DELAY;
+    let keyRepeatDelay = SCROLL_CONFIG.KEY_REPEAT_DELAY;
+    let scrollDelay = SCROLL_CONFIG.SCROLL_DELAY;
 
     const handleWheel = (e) => {
       if (!document.body) return;
@@ -95,7 +96,7 @@ const usePageNavigation = () => {
         } else {
           goToPrevPage();
         }
-      } else if (window.innerWidth > 500) {
+      } else if (window.innerWidth > LAYOUT_CONFIG.MOBILE_BREAKPOINT) {
         // Desktop: Use custom scroll snap
         e.preventDefault();
         
@@ -141,8 +142,8 @@ const usePageNavigation = () => {
       const deltaY = touchEndY - touchStartY;
       
       // Only trigger page navigation if horizontal swipe is clearly dominant
-      const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) * 1.5;
-      const isSignificantSwipe = Math.abs(deltaX) > 80;
+      const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) * SCROLL_CONFIG.SWIPE_RATIO_THRESHOLD;
+      const isSignificantSwipe = Math.abs(deltaX) > SCROLL_CONFIG.SWIPE_THRESHOLD_SIGNIFICANT;
       
       if (isHorizontalSwipe && isSignificantSwipe) {
         if (deltaX > 0) {
@@ -160,14 +161,14 @@ const usePageNavigation = () => {
       const scrollableElement = getCurrentScrollableElement();
       if (scrollableElement) {
         isScrolling = true;
-        if (window.innerWidth > 500) {
+        if (window.innerWidth > LAYOUT_CONFIG.MOBILE_BREAKPOINT) {
           customScrollSnap(scrollableElement, direction);
         } else {
-          scrollableElement.scrollBy({ top: direction * 100, behavior: 'smooth' });
+          scrollableElement.scrollBy({ top: direction * SCROLL_CONFIG.MOBILE_SCROLL_AMOUNT, behavior: 'smooth' });
         }
         setTimeout(() => {
           isScrolling = false;
-        }, scrollDelay); // Use the same delay as repeat
+        }, scrollDelay);
       }
     };
 
@@ -193,71 +194,42 @@ const usePageNavigation = () => {
     // Keyboard navigation with custom scroll snap and timing
     const handleKeyDown = (e) => {
       // Don't interfere with form inputs
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+      if (NAVIGATION_KEYS.BLOCKED_ELEMENTS.includes(e.target.tagName)) {
         return;
       }
 
-      switch (e.key) {
-        // Horizontal navigation keys
-        case 'ArrowLeft':
-        case 'a':
-          e.preventDefault();
-          goToPrevPage();
-          break;
-        case 'ArrowRight':
-        case 'd':
-          e.preventDefault();
-          goToNextPage();
-          break;
-        
-        // Vertical scroll keys - up
-        case 'ArrowUp':
-        case 'PageUp':
-        case 'w':
-        case 'W':
-          e.preventDefault();
-          // Handle initial scroll immediately
-          handleVerticalScroll(-1);
-          // Set up repeat scrolling if key is held
-          startKeyRepeat(-1);
-          break;
-        
-        // Vertical scroll keys - down
-        case 'ArrowDown':
-        case 'PageDown':
-        case 's':
-        case 'S':
-          e.preventDefault();
-          // Handle initial scroll immediately
-          handleVerticalScroll(1);
-          // Set up repeat scrolling if key is held
-          startKeyRepeat(1);
-          break;
-        
-        default:
-          // Let other keys pass through normally
-          break;
+      const key = e.key.toLowerCase();
+
+      // Horizontal navigation keys
+      if (NAVIGATION_KEYS.PREVIOUS.includes(key)) {
+        e.preventDefault();
+        goToPrevPage();
+      } else if (NAVIGATION_KEYS.NEXT.includes(key)) {
+        e.preventDefault();
+        goToNextPage();
+      }
+      // Vertical scroll keys - up
+      else if (NAVIGATION_KEYS.VERTICAL_UP.includes(key)) {
+        e.preventDefault();
+        handleVerticalScroll(-1);
+        startKeyRepeat(-1);
+      }
+      // Vertical scroll keys - down
+      else if (NAVIGATION_KEYS.VERTICAL_DOWN.includes(key)) {
+        e.preventDefault();
+        handleVerticalScroll(1);
+        startKeyRepeat(1);
       }
     };
 
     const handleKeyUp = (e) => {
+      const key = e.key.toLowerCase();
       // Stop key repeat when key is released
-      switch (e.key) {
-        case 'ArrowUp':
-        case 'PageUp':
-        case 'w':
-        case 'W':
-        case 'ArrowDown':
-        case 'PageDown':
-        case 's':
-        case 'S':
-          if (keyHoldTimer) {
-            clearTimeout(keyHoldTimer);
-            keyHoldTimer = null;
-          }
-          break;
-        default:
-          break;
+      if ([...NAVIGATION_KEYS.VERTICAL_UP, ...NAVIGATION_KEYS.VERTICAL_DOWN].includes(key)) {
+        if (keyHoldTimer) {
+          clearTimeout(keyHoldTimer);
+          keyHoldTimer = null;
+        }
       }
     };
 

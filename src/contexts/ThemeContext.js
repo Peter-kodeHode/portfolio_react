@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { THEME_CONFIG } from '../utils/constants';
 
 const ThemeContext = createContext();
 
@@ -11,35 +12,29 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      // User has a saved preference, use it
-      setIsDarkMode(savedTheme === 'dark');
-    } else {
-      // No saved preference, detect system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setIsDarkMode(prefersDark);
-    }
-  }, []);
+    return savedTheme === 'dark';
+  });
 
   useEffect(() => {
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     const root = document.documentElement;
     
     if (isDarkMode) {
-      root.style.setProperty('--primary', '#000000ff');
-      root.style.setProperty('--secondary', '#ffffffff');
-      root.style.setProperty('--icon-filter', 'invert(100%)');
-      root.style.setProperty('--shadow-color', 'rgba(255, 255, 255, 0.25)');
+      // Apply dark theme values from constants
+      root.style.setProperty('--primary', THEME_CONFIG.DARK.PRIMARY);
+      root.style.setProperty('--secondary', THEME_CONFIG.DARK.SECONDARY);
+      root.style.setProperty('--icon-filter', THEME_CONFIG.DARK.ICON_FILTER);
+      root.style.setProperty('--shadow-color', THEME_CONFIG.DARK.SHADOW_COLOR);
     } else {
-      root.style.setProperty('--primary', '#ffffffff');
-      root.style.setProperty('--secondary', '#000000ff');
-      root.style.setProperty('--icon-filter', 'invert(0%)');
-      root.style.setProperty('--shadow-color', 'rgba(0, 0, 0, 0.25)');
+      // Apply light theme values from constants
+      root.style.setProperty('--primary', THEME_CONFIG.LIGHT.PRIMARY);
+      root.style.setProperty('--secondary', THEME_CONFIG.LIGHT.SECONDARY);
+      root.style.setProperty('--icon-filter', THEME_CONFIG.LIGHT.ICON_FILTER);
+      root.style.setProperty('--shadow-color', THEME_CONFIG.LIGHT.SHADOW_COLOR);
     }
+
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   const toggleTheme = () => {

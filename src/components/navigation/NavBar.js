@@ -1,17 +1,14 @@
 import React from "react";
-import { StyledNavBar } from "./NavBar.styles";
 import { NavBarLinks } from "./NavBarLinks";
-import ThemeToggle from "./ThemeToggle";
-
+import ThemeToggle from "../ui/ThemeToggle";
+import "./NavBar.css";
 
 function NavBar() {
   return (
-    
-    <StyledNavBar>
-     
+    <nav className="navbar">
       <NavBarLinks />
       <ThemeToggle />
-    </StyledNavBar>
+    </nav>
   );
 }
 

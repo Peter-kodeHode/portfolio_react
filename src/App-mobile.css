@@ -1,13 +1,3 @@
-/* --- Mobile Styles --- */
-@media (max-width: 650px) {
-  .box-container a {
-    font-size: 2rem;
-  }
-  .box-container a:hover {
-    font-size: 2rem;
-  }
-}
-
 @media (max-width: 500px) {
   .App > div {
     height: 85dvh;
@@ -80,47 +70,6 @@
     flex-wrap: wrap;
     margin: 1rem 0;
   }
-  .projects h1,
-  .aboutme h1 {
-    font-size: 12dvw;
-  }
-
-  .dropdown-content {
-    pointer-events: auto;
-  }
-
-  .dropdown-content p {
-    font-size: 4vw;
-    line-height: 1.2rem;
-    max-width: 80vw;
-  }
-
-  .dropdown.active .dropdown-content {
-    max-width: 95vw !important;
-    max-height: 75dvh !important;
-  }
-
-  .dropdown::after {
-    top: 30px;
-    right: 40px;
-    font-size: 25px;
-    padding: 4px 6px;
-  }
-
-  .greyimg {
-    width: 100dvw;
-    height: 50dvh;
-  }
-
-  .github-img {
-    width: 2rem;
-    height: 2rem;
-    margin-left: 0.5rem;
-  }
-  .github-link {
-    font-size: 1rem;
-    margin: 0 0 1rem 0;
-  }
 
   .aboutme p {
     font-size: 5dvw;
@@ -133,16 +82,6 @@
   .aboutgrey {
     max-width: 70dvw;
     height: auto;
-  }
-
-  .footer {
-    max-height: 11em;
-  }
-  .socials {
-    margin-top: 2dvh;
-  }
-  .contact-info {
-    margin: 2dvh auto 0 auto;
   }
 
   .loading-screen h1{

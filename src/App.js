@@ -3,14 +3,12 @@ import { useLocation, Routes, Route } from "react-router-dom";
 import { motion } from "motion/react";
 import "./App.css";
 import "./App-mobile.css";
-import NavBar from "./globalComponents/navBar/NavBar";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import AboutMe from "./pages/AboutMe";
+import { NavBar} from './components/navigation';
+import { Home, AboutMe, Projects } from "./pages";
 import { AnimatePresence } from "motion/react";
-import GlobalStyle from "./globalComponents/globalStyles";
+import GlobalStyle from "./components/globalStyles";
 import usePageNavigation from "./hooks/usePageNavigation";
-import PageIndicator from "./globalComponents/PageIndicator";
+import PageIndicator from "./components/ui/PageIndicator";
 import { ReactComponent as Logo } from "./images/NavBar/image2vector.svg";
 
 // Import all assets that need preloading with correct paths

@@ -236,69 +236,7 @@ textarea {
   background: var(--primary);
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  min-width: 100%;
-  max-height: 10em;
-  background: var(--primary);
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  border-top: solid var(--secondary) 6px;
-}
 
-.socials {
-  margin-top: 2rem;
-}
-
-.socials img {
-  margin-left: 25px;
-  margin-right: 25px;
-  transition: transform 400ms;
-  width: 2rem;
-  height: 2rem;
-}
-
-.socials img:hover {
-  transform: scale(1.5);
-  transition: all 200ms ease-in-out;
-}
-
-.contact-info {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.contact-info ul {
-  display: flex;
-  flex-direction: row;
-  min-width: 100%;
-  font-family: "Lato", sans-serif;
-  font-weight: normal;
-  list-style: none;
-  color: var(--secondary);
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.contact-info li {
-  margin: 0 50px;
-  transition: all 400ms;
-}
-
-.contact-info li:hover {
-  cursor: default;
-  font-weight: bold;
-  transform: scale(1.3);
-  transition: all 200ms;
-}
-
-.contact-info a {
-  color: inherit;
-  text-decoration: none;
-}
 
 .aboutme {
   display: flex;
@@ -313,19 +251,7 @@ textarea {
   scroll-snap-stop: always;
 }
 
-.projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  min-width: 100%;
-}
 
-.projects-clickme {
-  color: var(--primary);
-  margin: auto 1rem auto 0;
-}
 
 .aboutgrey {
   filter: grayscale(100%);
@@ -342,16 +268,7 @@ textarea {
   transition: all 500ms ease-in;
 }
 
-.aboutme h1,
-.projects h1 {
-  color: var(--secondary);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 8dvw;
-  text-align: center;
-  transition: text-decoration 400ms;
-  max-width: 100%;
-}
+
 
 .aboutme p {
   color: var(--secondary);
@@ -366,110 +283,7 @@ textarea {
   max-width: 50vw;
 }
 
-.dropdown {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 65vh;
-  min-width: 85vw;
-}
 
-.dropdown-content {
-  /* Change from display: none to visibility + opacity for smooth transitions */
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  background-color: var(--secondary);
-  color: var(--primary);
-  max-width: 85vw;
-  max-height: 65vh;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.452);
-  z-index: 1;
-  text-align: center;
-  border-radius: 25px;
-  /* Enhanced transition for smooth animation */
-  transition: all 400ms ease-in-out, visibility 0ms linear 400ms;
-  overflow: hidden;
-  pointer-events: none;
-  /* Add transform for smoother animation */
-  transform: translateY(-10px) scale(0.95);
-}
-
-.dropdown-content p {
-  font-size: 1.25rem;
-  line-height: 2.5rem;
-  opacity: 0;
-  color: var(--primary);
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  margin: 2rem;
-  transition: opacity 600ms ease-in-out 200ms;
-}
-
-.dropdown:hover .dropdown-content {
-  /* Use visibility and opacity instead of display */
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-  transition: all 400ms ease-in-out, visibility 0ms linear 0ms;
-}
-
-.dropdown.active .dropdown-content {
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
-  transform: translateY(0) scale(1) !important;
-  transition: all 400ms ease-in-out, visibility 0ms linear 0ms !important;
-}
-
-.dropdown:hover .dropdown-content p,
-.dropdown.active .dropdown-content p {
-  opacity: 1;
-}
-
-.greyimg {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: filter 700ms ease-in;
-  border-radius: 4em;
-  max-width: 80vw;
-  height: auto;
-  border: 6px solid var(--secondary);
-  position: relative;
-  z-index: 0;
-}
-
-.greyimg:hover,
-.dropdown:hover .greyimg,
-.dropdown.active .greyimg {
-  filter: grayscale(0%);
-  -webkit-filter: grayscale(0%);
-}
-
-.dropdown::after {
-  content: "▼";
-  position: absolute;
-  top: 2vh;
-  right: 6vw;
-  background: var(--secondary);
-  color: var(--primary);
-  padding: 8px 12px;
-  border-radius: 50%;
-  font-size: 42px;
-  opacity: 0.7;
-  transition: opacity 600ms ease-in-out;
-  pointer-events: none;
-  z-index: 2;
-  animation: gentleBounce 1.5s ease-in-out infinite;
-}
-
-.dropdown:hover::after,
-.dropdown.active::after {
-  opacity: 0;
-  animation: none;
-}
 
 @keyframes gentleBounce {
   0%,
@@ -482,24 +296,9 @@ textarea {
   }
 }
 
-.github-link {
-  color: var(--primary);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-decoration: none;
-  display: inline-block;
-  margin: 2rem;
-  animation: gentleBounce 2s infinite;
-}
 
-.github-img {
-  filter: invert(100%) var(--icon-filter);
-  width: 2rem;
-  height: 2rem;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-}
+
+
 
 .loading-screen {
   position: fixed;
@@ -527,13 +326,12 @@ textarea {
   height: 30dvh;
   animation: spin 1s linear infinite;
   margin: 5dvh auto auto auto;
-  filter: var(--icon-filter); /* Apply filter to the container */
+  filter: var(--icon-filter); 
 }
 
 .loading-logo svg {
   width: 100%;
   height: 100%;
-  /* Remove the fill property that was causing the issue */
 }
 
 .loading-content {
