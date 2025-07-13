@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import Footer from "../components/footer";
 import PageLayout from "../components/layout/PageLayout";
 import PageHeader from "../components/ui/PageHeader/";
 import MyFace from "../images/AboutMe/itsme.jpg";

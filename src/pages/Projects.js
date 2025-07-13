@@ -4,9 +4,7 @@ import PageLayout from "../components/layout/PageLayout";
 import PageHeader from "../components/ui/PageHeader";
 import ProjectCard from "../components/projects/ProjectCard/ProjectCard";
 import { projectsData } from "../data/projectsData";
-import {
-PROJECTS_TEXT,
-} from "../language_and_strings/no";
+import { PROJECTS_TEXT } from "../language_and_strings/no";
 
 function Projects() {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -36,10 +34,7 @@ function Projects() {
         className="projects"
       />
 
-      <section 
-        aria-label="Mine prosjekter - hold over eller klikk på bildene for å se detaljer"
-        role="region"
-      >
+      <section aria-label="Mine prosjekter - hold over eller klikk på bildene for å se detaljer">
         {projectsData.map((project, index) => (
           <ProjectCard
             key={project.id}
