@@ -10,6 +10,7 @@ import GlobalStyle from "./components/globalStyles";
 import usePageNavigation from "./hooks/usePageNavigation";
 import PageIndicator from "./components/ui/PageIndicator";
 import { ReactComponent as Logo } from "./images/NavBar/image2vector.svg";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 // Import all assets that need preloading with correct paths
 import homeIcon from "./images/NavBar/home.svg";
@@ -76,6 +77,7 @@ function App() {
 
   return (
     <div className="App">
+      <ErrorBoundary>
       <GlobalStyle />
       <PageIndicator />
       <NavBar />
@@ -86,6 +88,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </AnimatePresence>
+      </ErrorBoundary>
     </div>
   );
 }
