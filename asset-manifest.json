@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.a217b96c.css",
+    "main.css": "/portfolio_react/static/css/main.a79940ae.css",
     "main.js": "/portfolio_react/static/js/main.ff3c4300.js",
     "static/media/blackjack.png": "/portfolio_react/static/media/blackjack.e800578051526526771d.png",
     "static/media/sunnyside.png": "/portfolio_react/static/media/sunnyside.d55b2b2ccca1035d7da1.png",
@@ -17,11 +17,11 @@
     "static/media/code.svg": "/portfolio_react/static/media/code.5006cb1eb2fba36c6c80bfb24f55e45a.svg",
     "static/media/facebook.svg": "/portfolio_react/static/media/facebook.54b6ed1796ae51e7991a86b99ceb8334.svg",
     "static/media/moon.svg": "/portfolio_react/static/media/moon.a82cae44d086a825a6fa3dfb65dce3ba.svg",
-    "main.a217b96c.css.map": "/portfolio_react/static/css/main.a217b96c.css.map",
+    "main.a79940ae.css.map": "/portfolio_react/static/css/main.a79940ae.css.map",
     "main.ff3c4300.js.map": "/portfolio_react/static/js/main.ff3c4300.js.map"
   },
   "entrypoints": [
-    "static/css/main.a217b96c.css",
+    "static/css/main.a79940ae.css",
     "static/js/main.ff3c4300.js"
   ]
 }
